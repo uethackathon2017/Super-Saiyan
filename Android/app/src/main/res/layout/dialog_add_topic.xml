@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.supersaiyan.englock.listener.OnDialogClickListener"></variable>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+            <EditText
+                android:id="@+id/edt_topic_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:hint="@string/enter_topic_name"
+
+                android:inputType="textCapSentences"
+                android:textCursorDrawable="@drawable/cursor_edittext"
+                app:backgroundTint="@color/colorAccent">
+
+            </EditText>
+
+            <requestFocus></requestFocus>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+
+            <Button
+                android:id="@+id/btn_create"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp"
+                android:onClick="@{(theView)->listener.onPositiveClick()}"
+                android:text="@string/create"
+                android:textAllCaps="true"
+                android:textColor="@color/colorEndableActive" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/btn_create"
+                android:onClick="@{(theView)->listener.onNegativeClick()}"
+                android:text="@string/cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/colorDisableActive" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
