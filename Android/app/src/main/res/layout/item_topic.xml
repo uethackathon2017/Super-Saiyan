@@ -3,6 +3,8 @@
 
     <data>
 
+        <import type="android.view.View"></import>
+
         <variable
             name="data"
             type="com.supersaiyan.englock.model.Topic"></variable>
@@ -92,7 +94,8 @@
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:visibility="@{data.createByUser==1?View.VISIBLE:View.GONE}">
 
                     <ImageView
                         android:layout_width="wrap_content"
