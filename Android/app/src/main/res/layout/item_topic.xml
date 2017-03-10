@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.supersaiyan.englock.model.Topic"></variable>
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_main_1_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/main_card_margin_vertical"
+        android:layout_marginLeft="@dimen/main_card_margin_horizontal"
+        android:layout_marginRight="@dimen/main_card_margin_horizontal"
+        android:layout_marginTop="@dimen/main_card_margin_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:foreground="?attr/selectableItemBackground"
+        card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+        card_view:cardElevation="@dimen/card_recycler_elevation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:id="@+id/img_main_card_2"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:glideUrl="@{data.iconUrl}"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tv_card_main_2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/img_main_card_2"
+                android:layout_margin="@dimen/card_title_margin"
+                android:text="@{data.nameToShow}"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_main_card_2"
+                android:padding="@dimen/card_button_margin"
+                android:weightSum="@{data.createByUser==0?2:3}">
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_choose_topic_24dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_list_word" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_delete_topic" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>

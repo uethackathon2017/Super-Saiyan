@@ -68,7 +68,7 @@ public class Topic extends BaseObservable implements Comparable {
     }
 
     public void setIconUrl(String iconUrl) {
-        this.iconUrl = Config.BASE_URL + "/" + iconUrl;
+        this.iconUrl = iconUrl;
     }
 
     public String getNameToShow() {

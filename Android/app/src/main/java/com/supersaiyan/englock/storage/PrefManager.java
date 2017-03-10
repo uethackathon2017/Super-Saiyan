@@ -40,7 +40,7 @@ public class PrefManager {
     public boolean isFirtTimeLaunch() {
         boolean result = preferences.getBoolean(EXTRA_IS_FIRST_TIME_LAUNCH, true);
         if (result) {
-            editor.putBoolean(EXTRA_IS_FIRST_TIME_LAUNCH, false);
+            editor.putBoolean(EXTRA_IS_FIRST_TIME_LAUNCH, false).commit();
         }
         return result;
     }
