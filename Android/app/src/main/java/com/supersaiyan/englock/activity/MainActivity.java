@@ -45,8 +45,11 @@ public class MainActivity extends AppCompatActivity {
         binding.setActivity(this);
         binding.getRoot();
         setContentView(binding.getRoot());
-
         checkData();
+
+        if (userConfig.isActiveLock()) {
+            startService(new Intent(this, MainService.class));
+        }
     }
 
     public void checkData() {

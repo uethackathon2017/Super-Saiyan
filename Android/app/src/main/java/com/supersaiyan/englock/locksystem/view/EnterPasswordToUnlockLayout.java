@@ -31,8 +31,6 @@ public class EnterPasswordToUnlockLayout extends LinearLayout implements View.On
     public EnterPasswordToUnlockLayout(Context context, OnAnswerListener listener, OnCancelClickListener onCancelClickListener) {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.layout_enter_passcode_to_unlock,this);
-        PrefManager prefManager =  PrefManager.getInstance();
-       // result = prefManager.getPassword();
         this.onAnswerListener = listener;
         this.onCancelClickListener = onCancelClickListener;
         init();

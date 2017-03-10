@@ -2,10 +2,10 @@
 
 let express = require('express');
 
-let map = require('../controllers/map');
+let topic = require('../controllers/oxford');
 
 let router = express.Router();
 
-router.get('/el/api/map/test', map.test);
+router.get('/el/api/oxford', topic.getNewWord);
 
 module.exports = router;
