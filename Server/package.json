@@ -9,6 +9,7 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "@google/maps": "*",
-    "dotenv": "*"
+    "dotenv": "*",
+    "promise": "*"
   }
 }
