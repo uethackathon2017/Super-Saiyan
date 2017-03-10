@@ -10,6 +10,8 @@
     "mongoose": "*",
     "@google/maps": "*",
     "dotenv": "*",
-    "promise": "*"
+    "promise": "*",
+    "request-promise": "*",
+    "google-translate-api": "*"
   }
 }

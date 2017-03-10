@@ -30,5 +30,6 @@ function startApplication() {
 
         app.use(require('./routes/topic'));
         app.use(require('./routes/map'));
+        app.use(require('./routes/oxford'));
     });
 }
