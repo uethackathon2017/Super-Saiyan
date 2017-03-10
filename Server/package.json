@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "body-parser": "*",
+    "@google/maps": "*",
     "bluebird": "*",
+    "body-parser": "*",
+    "dotenv": "*",
     "express": "*",
+    "google-translate-api": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
-    "@google/maps": "*",
-    "dotenv": "*",
-    "promise": "*"
+    "promise": "*",
+    "request": "^2.81.0",
+    "request-promise": "*"
   }
 }

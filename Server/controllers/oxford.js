@@ -5,11 +5,9 @@ let request = require('request-promise');
 let translate = require('google-translate-api');
 
 function getNewWord(req, res) {
-    var word = req.query.word;
-    console.log(process.env.APP_ID);
-    console.log(process.env.APP_KEY);
+    //noinspection JSUnresolvedVariable
+    let word = req.query.word;
 
-    word = 'hello';
     request({
         uri: 'https://od-api.oxforddictionaries.com:443/api/v1/entries/en/' + word,
         method: 'GET',
@@ -32,17 +30,16 @@ function getWordData(word, rawData) {
         var senses = lexicalEntries.entries[0].senses[0];
 
         var title = word;
-        var def = senses.definitions;
+        var def = senses.definitions[0];
         var p = new Promise((resolve, reject) => {
-            translate(word, {to: 'vi'}).then(function (res) {
-                resolve(res.text);
-            });}
+                translate(word, {to: 'vi'}).then(function (res) {
+                    resolve(res.text);
+                });
+            }
         ).then(mean => {
-            console.log(mean);
-
             var trans = lexicalEntries.pronunciations[0].phoneticSpelling;
+            trans = '/' + trans + '/';
             var sample = senses.examples[0].text;
-            console.log(trans);
             resolve(createNewWord(title, def, mean, trans, sample));
         });
     });
