@@ -4,7 +4,9 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,7 +22,7 @@ import com.supersaiyan.englock.storage.PrefManager;
 
 import java.util.Random;
 
-public class AnswerToUnlockLayout extends LinearLayout implements View.OnClickListener {
+public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickListener {
 
     private static final int ANIMATION_DURATION = 500;
     private static final Random RD = new Random();
@@ -40,16 +42,16 @@ public class AnswerToUnlockLayout extends LinearLayout implements View.OnClickLi
 
     public AnswerToUnlockLayout(Context context, OnAnswerListener answerListener, OnQuestionClickListener questionClickListener) {
         super(context);
-        LayoutInflater.from(context).inflate(R.layout.layout_answer_to_unlock, this);
+        // LayoutInflater.from(context).inflate(R.layout.layout_answer_to_unlock, this);
 
-        LayoutAnswerToUnlockBinding binding = DataBindingUtil.findBinding(this);
-        binding.tvTitle.setText("khafadskhfdsakfads");
+        LayoutAnswerToUnlockBinding binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.layout_answer_to_unlock, null, false);
+        addView(binding.getRoot(), new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
-        this.context = context;
-        this.context = context;
-        this.answerListener = answerListener;
-        this.questionClickListener = questionClickListener;
-        init();
+//        this.context = context;
+//        this.context = context;
+//        this.answerListener = answerListener;
+//        this.questionClickListener = questionClickListener;
+//        init();
     }
 
     public void init() {
@@ -322,7 +324,7 @@ public class AnswerToUnlockLayout extends LinearLayout implements View.OnClickLi
     }
 
 
-    interface OnQuestionClickListener {
+    public interface OnQuestionClickListener {
         void onClickQuestion(String text);
     }
 

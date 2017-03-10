@@ -21,14 +21,7 @@ public class PrefManager {
     public static void initialization(Context context) {
         INSTANCE = new PrefManager(context);
     }
-
-    private static final String EXTRA_ACTIVE = "Active";
     private static final String EXTRA_IS_FIRST_TIME_LAUNCH = "IsFirstTimeLanch";
-    private static final String EXTRA_USE_PASSWORD = "UsePassword";
-    private static final String EXTRA_PASSWORD = "Password";
-    private static final String EXTRA_TITLE = "Title";
-    private static final String EXTRA_IMAGE_BACKGROUND_INDEX = "ImageBackgroundIndex";
-
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
 

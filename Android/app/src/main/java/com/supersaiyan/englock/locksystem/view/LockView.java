@@ -16,10 +16,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.dev.thanhnamitit.studylock.Data;
-import com.dev.thanhnamitit.studylock.R;
-import com.dev.thanhnamitit.studylock.locksystem.listener.OnAnswerListener;
-import com.dev.thanhnamitit.studylock.storage.PrefManager;
+import com.supersaiyan.englock.R;
+import com.supersaiyan.englock.locksystem.listener.OnAnswerListener;
+import com.supersaiyan.englock.model.UserConfig;
+
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -36,7 +36,8 @@ public class LockView extends FrameLayout implements OnAnswerListener, EnterPass
     private int mode;
 
     private int numberPagers;
-    private PrefManager prefManager = PrefManager.getInstance();
+
+    private UserConfig userConfig = UserConfig.getInstance();
 
     public LockView(Context context, int backgroundIndex, int mode, OnUnlockListener onUnlockListener) {
         super(context);
@@ -45,7 +46,7 @@ public class LockView extends FrameLayout implements OnAnswerListener, EnterPass
         LayoutInflater.from(context).inflate(R.layout.layout_lock_parent, this);
         textToSpeech = new TextToSpeech(getContext(), this);
         setBackground(backgroundIndex);
-        if (prefManager.getUsePassword()) {
+        if (userConfig.isUsePassWord()) {
             numberPagers = 2;
         } else {
             numberPagers = 1;
@@ -55,12 +56,9 @@ public class LockView extends FrameLayout implements OnAnswerListener, EnterPass
 
 
     public void setBackground(int backgroundIndex) {
-        if (backgroundIndex == -1) {
 
-            backgroundIndex = prefManager.getImageBackgroundIndex(true);
-        }
         imgBackground = (ImageView) findViewById(R.id.img_bg);
-        Glide.with(getContext()).load(Data.ARRAY_BACKGROUND_IMAGE_ID[backgroundIndex])
+        Glide.with(getContext()).load(R.drawable.bkg_02)
                 .centerCrop().into(imgBackground);
     }
 

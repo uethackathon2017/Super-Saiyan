@@ -9,10 +9,11 @@ import android.widget.LinearLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.dev.thanhnamitit.studylock.R;
-import com.dev.thanhnamitit.studylock.locksystem.listener.OnAnswerListener;
-import com.dev.thanhnamitit.studylock.storage.PrefManager;
+
 import com.nineoldandroids.animation.Animator;
+import com.supersaiyan.englock.R;
+import com.supersaiyan.englock.locksystem.listener.OnAnswerListener;
+import com.supersaiyan.englock.storage.PrefManager;
 
 public class EnterPasswordToUnlockLayout extends LinearLayout implements View.OnClickListener {
 
@@ -31,7 +32,7 @@ public class EnterPasswordToUnlockLayout extends LinearLayout implements View.On
         super(context);
         LayoutInflater.from(context).inflate(R.layout.layout_enter_passcode_to_unlock,this);
         PrefManager prefManager =  PrefManager.getInstance();
-        result = prefManager.getPassword();
+       // result = prefManager.getPassword();
         this.onAnswerListener = listener;
         this.onCancelClickListener = onCancelClickListener;
         init();
@@ -79,7 +80,7 @@ public class EnterPasswordToUnlockLayout extends LinearLayout implements View.On
         try {
             Button btn = (Button) view;
             answer.append(btn.getText());
-            vRing[answer.length() - 1].setBackgroundResource(R.drawable.dra_shape_circle_full);
+         //   vRing[answer.length() - 1].setBackgroundResource(R.drawable.dra_shape_circle_full);
             if (answer.length() >= result.length()) {
                 setClickableForBtnToUnlock(false);
                 if (answer.toString().equals(result)) {
