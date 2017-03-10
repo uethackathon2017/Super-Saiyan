@@ -1,6 +1,7 @@
 [
   {
     "name": "Animal",
+    "country_name": "Động vật",
     "words": [
       {
         "title": "Baboon",
@@ -86,6 +87,7 @@
   },
   {
     "name": "Education",
+    "country_name": "Giáo dục",
     "words": [
       {
         "title": "Accredit",
@@ -171,6 +173,7 @@
   },
   {
     "name": "Sport",
+    "country_name": "Thể thao",
     "words": [
       {
         "title": "Archery",
@@ -256,6 +259,7 @@
   },
   {
     "name": "Technology",
+    "country_name": "Công nghệ",
     "words": [
       {
         "title": "Computer",
@@ -341,6 +345,7 @@
   },
   {
     "name": "Traffic",
+    "country_name": "Giao thông",
     "words": [
       {
         "title": "Accident",
