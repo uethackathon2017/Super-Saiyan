@@ -127,7 +127,7 @@
         "sample": "In 1909-1910 it had an enrollment of 2631 students.",
         "image": ""
       },
-        {
+      {
         "title": "Candidate",
         "def": "a person taking an exam",
         "mean": "Thí sinh",
@@ -212,7 +212,7 @@
         "sample": "I play table tennis twice a week.",
         "image": "public/images/sport_table-tennis.png"
       },
-              {
+      {
         "title": "Football",
         "def": "a game played by two teams of 11 players, using a round ball which players kick up and down the playing field",
         "mean": "Bóng đá",
@@ -297,7 +297,7 @@
         "sample": "And she would always whisper something of a past memory, perhaps a name, just before deep slumber.",
         "image": "public/images/technology_memory.png"
       },
-            {
+      {
         "title": "Network",
         "def": "a complicated system of roads, lines, tubes, nerves, etc. that cross each other and are connected to each other",
         "mean": "Mạng",
