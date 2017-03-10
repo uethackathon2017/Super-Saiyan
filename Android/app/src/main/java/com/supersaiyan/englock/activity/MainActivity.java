@@ -10,11 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
+import com.supersaiyan.englock.MainService;
 import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.api.ServiceImpl;
 import com.supersaiyan.englock.databinding.ActivityMainBinding;
 import com.supersaiyan.englock.dto.TopicDTO;
 import com.supersaiyan.englock.dto.TopicDTOManager;
+import com.supersaiyan.englock.locksystem.listener.OnAnswerListener;
+import com.supersaiyan.englock.locksystem.view.AnswerToUnlockLayout;
+import com.supersaiyan.englock.model.UserConfig;
 import com.supersaiyan.englock.storage.DatabaseManager;
 import com.supersaiyan.englock.storage.PrefManager;
 import com.supersaiyan.englock.view.dialog.AlertDialogPlus;
@@ -29,19 +33,23 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private AlertDialogPlus allowDisableAciveDialog = null;
     private AlertDialogPlus requestPermissionDialog = null;
+    private AlertDialogPlus introduceLockScreenDialog = null;
 
-    public boolean actived;
+    private UserConfig userConfig = UserConfig.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_main, null, false);
-        binding.setActived(actived);
+        binding.setUserConfig(userConfig);
         binding.setActivity(this);
         binding.getRoot();
         setContentView(binding.getRoot());
-
         checkData();
+
+        if (userConfig.isActiveLock()) {
+            startService(new Intent(this, MainService.class));
+        }
     }
 
     public void checkData() {
@@ -73,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void activeClick() {
-        if (actived) {
+        if (userConfig.isActiveLock()) {
             if (allowDisableAciveDialog == null) {
                 allowDisableAciveDialog = AlertDialogPlus.newInstance(this, R.mipmap.ic_launcher, R.string.notify_dialog, R.string.allow_disable_active_mesage, R.string.disable, R.string.cancel, 0);
             }
@@ -105,9 +113,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void optionLockScreen(boolean endable) {
+        if (endable) {
+            startService(new Intent(this, MainService.class));
+            if (introduceLockScreenDialog == null) {
+                introduceLockScreenDialog = AlertDialogPlus.newInstance(this, R.mipmap.ic_launcher, R.string.active_success, R.string.introduce_lock_screen, android.R.string.ok, 0, 0);
+            }
+            introduceLockScreenDialog.show(null);
 
-        actived = !actived;
-        binding.setActived(actived);
+        } else {
+            stopService(new Intent(MainActivity.this, MainService.class));
+        }
+        userConfig.setActiveLock(!userConfig.isActiveLock());
     }
 
     @Override

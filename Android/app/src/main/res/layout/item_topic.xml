@@ -8,107 +8,74 @@
         <variable
             name="data"
             type="com.supersaiyan.englock.model.Topic"></variable>
+
+        <variable
+            name="activity"
+            type="com.supersaiyan.englock.activity.TopicActivity"></variable>
     </data>
 
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_main_1_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/main_card_margin_vertical"
-        android:layout_marginLeft="@dimen/main_card_margin_horizontal"
-        android:layout_marginRight="@dimen/main_card_margin_horizontal"
-        android:layout_marginTop="@dimen/main_card_margin_vertical"
-        android:background="?attr/selectableItemBackground"
-        android:foreground="?attr/selectableItemBackground"
-        card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
-        card_view:cardElevation="@dimen/card_recycler_elevation">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-
-                android:id="@+id/img_main_card_2"
+            <com.supersaiyan.englock.view.customview.SquareImageView
+                android:id="@+id/squareImageView"
                 android:layout_width="match_parent"
-                android:layout_height="96dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:adjustViewBounds="true"
+                android:background="@color/topic_bg"
                 android:glideUrl="@{data.iconUrl}"
+                android:padding="32dp"
                 android:scaleType="centerInside" />
 
-            <TextView
-                android:id="@+id/tv_card_main_2_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/img_main_card_2"
-                android:layout_marginLeft="@dimen/card_title_margin"
-                android:text="@{data.nameToShow}"
-                android:textColor="#757575"
-                android:textSize="20sp" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/img_main_card_2"
-                android:padding="@dimen/card_button_margin"
-                android:weightSum="@{data.createByUser==0?2:3}">
+                android:layout_alignParentBottom="true"
+                android:background="@{data.seclected==1?@color/topic_endable:@color/topic_disable}"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
 
-                <RelativeLayout
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:clickable="true"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_choose_topic_24dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="1dp"
-
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:clickable="true"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_list_word" />
+                <ImageView
+                    android:id="@+id/img_tick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_choose_topic"
+                    android:visibility="@{data.seclected==1?View.VISIBLE:View.GONE}" />
 
 
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toLeftOf="@+id/ic_more"
+                    android:layout_toRightOf="@+id/img_tick"
+                    android:paddingTop="8dp"
+                    android:text="@{data.nameToShow}"
+                    android:textColor="@android:color/white" />
 
-                <RelativeLayout
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:visibility="@{data.createByUser==1?View.VISIBLE:View.GONE}">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:clickable="true"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_delete_topic" />
-                </RelativeLayout>
-
-
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/ic_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="@{(theView)->activity.onTopicClick(data,theView)}"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/ic_more" />
+            </RelativeLayout>
 
 
         </RelativeLayout>
