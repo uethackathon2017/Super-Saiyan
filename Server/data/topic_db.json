@@ -105,7 +105,7 @@
         "mean": "Giấy chứng nhận",
         "trans": "/sərˈtɪfɪkət/",
         "sample": "He even had a birth certificate for me.",
-        "image": ""
+        "image": "public/images/education_certificate.png"
       },
       {
         "title": "Campus",
@@ -113,7 +113,7 @@
         "mean": "Khuôn viên trường",
         "trans": "/ˈkæmpəs/",
         "sample": "University campuses became the rendezvous of students' organizations.",
-        "image": ""
+        "image": "public/images/education_campus.png"
       },
       {
         "title": "Cheating",
@@ -208,7 +208,7 @@
         "mean": "Tập thể hình",
         "trans": "/,dʒim'næstiks/",
         "sample": "Evora was involved in gymnastics for several years, where her favorite event was the uneven bars.",
-        "image": ""
+        "image": "public/images/sport_gymnastics.png"
       },
       {
         "title": "Table tennis",
