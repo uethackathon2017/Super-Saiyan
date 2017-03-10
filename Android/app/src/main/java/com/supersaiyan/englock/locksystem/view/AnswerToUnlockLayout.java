@@ -16,42 +16,42 @@ import com.nineoldandroids.animation.Animator;
 import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.databinding.LayoutAnswerToUnlockBinding;
 import com.supersaiyan.englock.locksystem.listener.OnAnswerListener;
+import com.supersaiyan.englock.model.UserConfig;
 import com.supersaiyan.englock.model.Word;
 import com.supersaiyan.englock.storage.DatabaseManager;
 import com.supersaiyan.englock.storage.PrefManager;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
+import java.util.Set;
 
 public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickListener {
 
     private static final int ANIMATION_DURATION = 500;
     private static final Random RD = new Random();
 
-    private int rightAnswer;
     private TextView tvQuestion, tvTrans, tvTopicName;
     private Button answer1, answer2;
     private View viewContainQuestion;
     private OnAnswerListener answerListener;
     private OnQuestionClickListener questionClickListener;
-    private Word[] words;
+    private ArrayList<Word> words;
     private String topicName;
+    private int rightAnswerIndex;
 
+    private UserConfig userConfig = UserConfig.getInstance();
 
-    private PrefManager prefManager = PrefManager.getInstance();
-    private Context context;
+    private LayoutAnswerToUnlockBinding binding;
 
     public AnswerToUnlockLayout(Context context, OnAnswerListener answerListener, OnQuestionClickListener questionClickListener) {
         super(context);
-        // LayoutInflater.from(context).inflate(R.layout.layout_answer_to_unlock, this);
-
-        LayoutAnswerToUnlockBinding binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.layout_answer_to_unlock, null, false);
+        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.layout_answer_to_unlock, null, false);
         addView(binding.getRoot(), new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
-//        this.context = context;
-//        this.context = context;
-//        this.answerListener = answerListener;
-//        this.questionClickListener = questionClickListener;
-//        init();
+        this.answerListener = answerListener;
+        this.questionClickListener = questionClickListener;
+        init();
     }
 
     public void init() {
@@ -60,14 +60,10 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
     }
 
     private void pickWords() {
-//        int index = RD.nextInt(listTopicUseChoice.size());
-//        topicName = listTopicUseChoice.get(index);
-//        words = DatabaseManager.getInstance().getDoubleWordFromTable(topicName);
-//        while (words[0].getMean().equals(words[1].getMean())) {
-//            words = DatabaseManager.getInstance().getDoubleWordFromTable(topicName);
-//        }
-//        rightAnswer = RD.nextInt(2);
-//        topicName = mapToppicTitle.get(topicName);
+        HashMap<String, ArrayList<Word>> result = DatabaseManager.getInstance().getWordToLockScreen();
+        Set<String> keySet = result.keySet();
+        topicName = keySet.toArray()[0].toString();
+        words = result.get(topicName);
     }
 
     private void setUpAnserToUnLockLayout() {
@@ -82,7 +78,7 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
         tvTopicName = (TextView) findViewById(R.id.tv_topic_name);
 
         TextView tvTitle = (TextView) findViewById(R.id.tv_title);
-        tvTitle.setText("he");
+        tvTitle.setText(userConfig.getLockTitle());
 
         setDataForView();
 
@@ -90,10 +86,10 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
     }
 
     private void setDataForView() {
-        //  tvQuestion.setText(words[rightAnswer].getWord());
-        tvTrans.setText(words[rightAnswer].getTrans());
-        answer1.setText(words[0].getMean());
-        answer2.setText(words[1].getMean());
+        tvQuestion.setText(words.get(rightAnswerIndex).getTitle());
+        tvTrans.setText(words.get(rightAnswerIndex).getTrans());
+        answer1.setText(words.get(0).getMean());
+        answer2.setText(words.get(1).getMean());
         tvTopicName.setText(topicName);
     }
 
@@ -120,7 +116,7 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
 
     public void checkAnswer(final int answer) {
         setClickAbleForAnswerBtn(false);
-        if (answer == rightAnswer) {
+        if (answer == rightAnswerIndex) {
 
             answerListener.onAnswerRight();
         } else {

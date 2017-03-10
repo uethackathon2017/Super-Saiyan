@@ -74,11 +74,6 @@ public class TopicActivity extends AppCompatActivity {
                             topic.setSeclected(1);
                         }
                         DatabaseManager.getInstance().updateTopicSelect(topic.getTopicName(), topic.getSeclected());
-
-                        ArrayList<Word> words = DatabaseManager.getInstance().getWordToLockScreen();
-                        for (Word word : words) {
-                            Log.i(TAG, word.getTitle() + " " + word.getMean());
-                        }
                         break;
                     case R.id.action_list_word:
                         Intent intent = new Intent(TopicActivity.this, TopicDetailActivity.class);
