@@ -3,6 +3,8 @@
 
     <data>
 
+        <import type="android.view.View"></import>
+
         <variable
             name="data"
             type="com.supersaiyan.englock.model.Topic"></variable>
@@ -34,16 +36,16 @@
                 android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"
                 android:glideUrl="@{data.iconUrl}"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerInside" />
 
             <TextView
                 android:id="@+id/tv_card_main_2_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/img_main_card_2"
-                android:layout_margin="@dimen/card_title_margin"
+                android:layout_marginLeft="@dimen/card_title_margin"
                 android:text="@{data.nameToShow}"
-                android:textColor="@android:color/white"
+                android:textColor="#757575"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -92,7 +94,8 @@
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:visibility="@{data.createByUser==1?View.VISIBLE:View.GONE}">
 
                     <ImageView
                         android:layout_width="wrap_content"

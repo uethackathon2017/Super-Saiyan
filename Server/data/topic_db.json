@@ -2,7 +2,7 @@
   {
     "name": "Animal",
     "country_name": "Động vật",
-    "icon_url": "public/images/animal_baboon.png",
+    "icon_url": "public/images/animal_butterfly.png",
     "words": [
       {
         "title": "Baboon",
@@ -43,13 +43,53 @@
         "trans": "/biː/",
         "sample": "The fly actually has a rather complex little ‘brain,’ as do bees, ants, and other higher insects.",
         "image": "public/images/animal_bee.png"
+      },
+      {
+        "title": "Butterfly",
+        "def": "a flying insect with a long thin body and four large, usually brightly coloured, wings",
+        "mean": "Con bướm",
+        "trans": "/ˈbʌt.ə.flaɪ/",
+        "sample": "She's like a butterfly. She flits in and out of people's lives.",
+        "image": "public/images/animal_butterfly.png"
+      },
+      {
+        "title": "Cheetah",
+        "def": "a wild animal of the cat family, with black spots, that runs very fast",
+        "mean": "Báo Gêpa",
+        "trans": "/ˈtʃiː.tə/",
+        "sample": "I can run faster than a cheetah.",
+        "image": "public/images/animal_cheetah.png"
+      },
+      {
+        "title": "Chicken",
+        "def": "a large bird that is often kept for its eggs or meat",
+        "mean": "Con gà",
+        "trans": "/ˈtʃɪk.ɪn/",
+        "sample": "They keep chickens in the back yard.",
+        "image": "public/images/animal_chicken.png"
+      },
+      {
+        "title": "Cow",
+        "def": " a large animal kept on farms to produce milk or beef",
+        "mean": "Con bò",
+        "trans": "/kaʊ/",
+        "sample": "Cows give us milk.",
+        "image": "public/images/animal_cow.png"
+      },
+      {
+        "title": "Donkey",
+        "def": "n animal of the horse family, with short legs and long ears",
+        "mean": "Con lừa",
+        "trans": "/ˈdɒŋ.ki/",
+        "sample": "We've known each other for donkey's years.",
+        "image": "public/images/animal_donkey.png"
       }
     ]
   },
   {
     "name": "Education",
     "country_name": "Giáo dục",
-    "icon_url": "public/images/education_accredit.png",
+    "icon_url": "public/images/education_teacher.png",
     "words": [
       {
         "title": "Accredit",
@@ -90,13 +130,53 @@
         "trans": "/ɪnˈroʊlmənt /",
         "sample": "In 1909-1910 it had an enrollment of 2631 students.",
         "image": ""
+      },
+      {
+        "title": "Candidate",
+        "def": "a person taking an exam",
+        "mean": "Thí sinh",
+        "trans": "/ˈkændɪdət/",
+        "sample": "Candidates are allowed to use dictionaries in this examination.",
+        "image": "public/images/education_candidate.png"
+      },
+      {
+        "title": "Teacher",
+        "def": "a person whose job is teaching, especially in a school",
+        "mean": "Giáo viên",
+        "trans": "/ˈtiːtʃər/",
+        "sample": "There is a growing need for qualified teachers of Business English.",
+        "image": "public/images/education_teacher.png"
+      },
+      {
+        "title": "Book",
+        "def": "a set of printed pages that are fastened inside a cover",
+        "mean": "Sách",
+        "trans": "/bʊk/",
+        "sample": "You need to go over the books again; there’s a mistake somewhere.",
+        "image": "public/images/education_book.png"
+      },
+      {
+        "title": "Lesson",
+        "def": "a period of time in which somebody is taught something",
+        "mean": "Bài học",
+        "trans": "/ˈlesn/",
+        "sample": "She gives piano lessons.",
+        "image": "public/images/education_lesson.png"
+      },
+      {
+        "title": "Materials",
+        "def": "information or ideas used in books, etc.",
+        "mean": "Nhập học",
+        "trans": "/məˈtɪriəl/",
+        "sample": "She's collecting material for her latest novel.",
+        "image": "public/images/education_materials.png"
       }
     ]
   },
   {
     "name": "Sport",
     "country_name": "Thể thao",
-    "icon_url": "public/images/sport_archery.png",
+    "icon_url": "public/images/sport_athletics.png",
     "words": [
       {
         "title": "Archery",
@@ -135,8 +215,48 @@
         "def": "An indoor game based on tennis, played with small bats and a ball bounced on a table divided by a net",
         "mean": "Bóng bàn",
         "trans": "/'teibl 'tenis/",
-        "sample": "",
+        "sample": "I play table tennis twice a week.",
         "image": "public/images/sport_table-tennis.png"
+      },
+      {
+        "title": "Football",
+        "def": "a game played by two teams of 11 players, using a round ball which players kick up and down the playing field",
+        "mean": "Bóng đá",
+        "trans": "/ˈfʊtbɔːl/",
+        "sample": "Health care should not become a political football.",
+        "image": "public/images/sport_football.png"
+      },
+      {
+        "title": "Chess",
+        "def": "a game for two people played on a board marked with black and white squares on which each playing piece",
+        "mean": "Cờ vua",
+        "trans": "/tʃes/",
+        "sample": "Alex plays chess as a hobby.",
+        "image": "public/images/sport_chess.png"
+      },
+      {
+        "title": "Skate",
+        "def": "to move on skates (usually referring to ice skating, if no other information is given)",
+        "mean": "Trượt Patin",
+        "trans": "/skeɪt/",
+        "sample": "It was so cold that we were able to go skating on the lake.",
+        "image": "public/images/sport_skate.png"
+      },
+      {
+        "title": "Baseball",
+        "def": "a game played especially in the US by two teams of nine players, using a bat and ball",
+        "mean": "Bóng chày",
+        "trans": "/ˈbeɪsbɔːl/",
+        "sample": "My baseball team is awesome.",
+        "image": "public/images/sport_baseball.png"
+      },
+      {
+        "title": "Volleyball",
+        "def": "a game in which two teams of six players use their hands to hit a large ball backwards and forwards over a high net",
+        "mean": "Bóng chuyền",
+        "trans": "/ˈvɒlibɔːl/",
+        "sample": "I play volleyball for my country team.",
+        "image": "public/images/sport_volleyball.png"
       }
     ]
   },
@@ -184,13 +304,53 @@
         "trans": "/'meməri/",
         "sample": "And she would always whisper something of a past memory, perhaps a name, just before deep slumber.",
         "image": "public/images/technology_memory.png"
+      },
+      {
+        "title": "Network",
+        "def": "a complicated system of roads, lines, tubes, nerves, etc. that cross each other and are connected to each other",
+        "mean": "Mạng",
+        "trans": "/ˈnetwɜːrk/",
+        "sample": "The office network allows users to share files and software, and to use a central printer.",
+        "image": "public/images/technology_network.png"
+      },
+      {
+        "title": "Webcam",
+        "def": "a video camera that is connected to a computer so that what it records can be seen on a website or on another computer as it happens",
+        "mean": "webcam",
+        "trans": "/ˈwebkæm/",
+        "sample": "You can use a webcam instead of camera.",
+        "image": "public/images/technology_webcam.png"
+      },
+      {
+        "title": "Satellite Dish",
+        "def": "a piece of equipment that receives signals from a satellite, used to enable people to watch satellite television",
+        "mean": "Đĩa vệ tinh",
+        "trans": "/ˈsætəlaɪt dɪʃ/",
+        "sample": "Today, everyone can watch all channels of VTV with a statellite dish",
+        "image": "public/images/technology_satellite-dish.png"
+      },
+      {
+        "title": "Email",
+        "def": "a way of sending messages and data to other people by means of computers connected together in a network",
+        "mean": "Thư điện tử",
+        "trans": "/ˈiːmeɪl/",
+        "sample": "Thanks for your email.",
+        "image": "public/images/technology_email.png"
+      },
+      {
+        "title": "Internet",
+        "def": "an international computer network connecting other networks and computers from companies, universities, etc.",
+        "mean": "Mạng toàn cầu",
+        "trans": "/ˈɪntərnet/ ",
+        "sample": "I looked it up on the Internet.",
+        "image": "public/images/technology_internet.png"
       }
     ]
   },
   {
     "name": "Traffic",
     "country_name": "Giao thông",
-    "icon_url": "public/images/traffic_accident.png",
+    "icon_url": "public/images/traffic_bus.png",
     "words": [
       {
         "title": "Accident",
@@ -231,6 +391,46 @@
         "trans": "/ˈhaɪweɪ/",
         "sample": "It can be reached by highways from the major cities in Guangdong, Guangxi, and Hunan.",
         "image": "public/images/traffic_highway.png"
+      },
+      {
+        "title": "Ambulance",
+        "def": "a vehicle with special equipment, used for taking sick or injured people to a hospital",
+        "mean": "Xe cứu thương",
+        "trans": "/ˈæmbjələns/",
+        "sample": "Call an ambulance!",
+        "image": "public/images/traffic_ambulance.png"
+      },
+      {
+        "title": "Cab",
+        "def": "A taxi",
+        "mean": "Xe taxi",
+        "trans": "/kæb/",
+        "sample": "She goes home by a cab.",
+        "image": "public/images/traffic_cab.png"
+      },
+      {
+        "title": "Helicopter",
+        "def": " an aircraft without wings that has large blades on top that go round.",
+        "mean": "Trực thương",
+        "trans": "/ˈhelɪkɑːptər/",
+        "sample": "He was rushed to the hospital by helicopter.",
+        "image": "public/images/traffic_helicopter.png"
+      },
+      {
+        "title": "Train",
+        "def": "a railway/railroad engine pulling a number of coaches/cars or trucks",
+        "mean": "Tàu hỏa",
+        "trans": "/treɪn/",
+        "sample": "There are regular train services to Edinburgh and Glasgow.",
+        "image": "public/images/traffic_train.png"
+      },
+      {
+        "title": "Ship",
+        "def": "a large boat that carries people or goods by sea",
+        "mean": "Tàu biển",
+        "trans": "/ʃɪp/",
+        "sample": "There are two restaurants on board ship.",
+        "image": "public/images/traffic_ship.png"
       }
     ]
   }
