@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#FFFFFF">
-    <item android:drawable="@drawable/dra_shape_circle_stroke"/>
-</ripple>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/dra_shape_circle_stroke2" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/dra_shape_circle_stroke"></item>
+
+</selector>
