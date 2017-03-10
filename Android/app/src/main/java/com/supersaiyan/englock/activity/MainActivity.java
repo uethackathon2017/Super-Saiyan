@@ -1,5 +1,6 @@
 package com.supersaiyan.englock.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
@@ -10,8 +11,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import com.supersaiyan.englock.R;
+import com.supersaiyan.englock.api.ServiceImpl;
 import com.supersaiyan.englock.databinding.ActivityMainBinding;
+import com.supersaiyan.englock.dto.TopicDTO;
+import com.supersaiyan.englock.dto.TopicDTOManager;
+import com.supersaiyan.englock.storage.DatabaseManager;
+import com.supersaiyan.englock.storage.PrefManager;
 import com.supersaiyan.englock.view.dialog.AlertDialogPlus;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +40,36 @@ public class MainActivity extends AppCompatActivity {
         binding.setActivity(this);
         binding.getRoot();
         setContentView(binding.getRoot());
+
+        checkData();
+    }
+
+    public void checkData() {
+        if (PrefManager.getInstance().isFirtTimeLaunch()) {
+            final ProgressDialog progressDialog = ProgressDialog.show(this, getString(R.string.preaparing_data), getString(R.string.please_wait));
+            progressDialog.show();
+            new TopicDTOManager().getTopicsAsync(new TopicDTOManager.OnTopicLoadListener() {
+                @Override
+                public void onTopicLoadSuccess(final ArrayList<TopicDTO> topics) {
+                    DatabaseManager databaseManager = DatabaseManager.getInstance();
+                    for (TopicDTO topicDTO : topics) {
+                        databaseManager.insertNewTopic(topicDTO.getTopic(), topicDTO.getWords());
+                    }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+                        }
+                    });
+                }
+
+                @Override
+                public void onTopicLoadFailure() {
+
+                }
+            });
+        }
+
     }
 
     public void activeClick() {
@@ -81,5 +119,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void chooseTopicClick() {
+        Intent intent = new Intent(this, TopicActivity.class);
+        startActivity(intent);
     }
 }

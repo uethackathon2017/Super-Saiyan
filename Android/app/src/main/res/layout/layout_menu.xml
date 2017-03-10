@@ -27,13 +27,14 @@
             android:id="@+id/layout_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical"
             android:padding="2dp">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2">
+                android:weightSum="3">
 
                 <com.supersaiyan.englock.view.customview.SquareLinearLayout
                     android:id="@+id/btn_active"
@@ -55,14 +56,47 @@
                         android:src="@{actived?@drawable/ic_tick_v:@drawable/ic_active}" />
 
                     <TextView
-                        android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@{actived?@string/de_active:@string/active}"
                         android:textColor="@color/main_text_color"
-                        android:textSize="@dimen/text_size_activity_main"
+                        android:textStyle="bold" />
+                </com.supersaiyan.englock.view.customview.SquareLinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/stroke_margin_activity_main"
+                    android:background="@color/view_stroke"></View>
+
+                <com.supersaiyan.englock.view.customview.SquareLinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_main_item"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="@{(theView)->activity.chooseTopicClick()}"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_activity_main"
+                        android:layout_height="@dimen/icon_size_activity_main"
+                        android:background="@drawable/shape_circle_blue"
+                        android:padding="@dimen/icon_pading_activity_main"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_topic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:gravity="center"
+                        android:text="@string/choice_topic"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold" />
                 </com.supersaiyan.englock.view.customview.SquareLinearLayout>
 
@@ -89,16 +123,15 @@
                         android:background="@drawable/shape_circle_red"
                         android:padding="@dimen/icon_pading_activity_main"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_topic" />
+                        android:src="@drawable/ic_statistics" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
-                        android:text="@string/choice_topic"
+                        android:text="@string/train"
                         android:textColor="@color/main_text_color"
-                        android:textSize="@dimen/text_size_activity_main"
                         android:textStyle="bold" />
                 </com.supersaiyan.englock.view.customview.SquareLinearLayout>
             </TableRow>
@@ -113,7 +146,41 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2">
+                android:weightSum="3">
+
+                <com.supersaiyan.englock.view.customview.SquareLinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_main_item"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_activity_main"
+                        android:layout_height="@dimen/icon_size_activity_main"
+                        android:background="@drawable/shape_circle_purple"
+                        android:padding="@dimen/icon_pading_activity_main"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_statistics" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:gravity="center"
+                        android:text="@string/statistics"
+                        android:textColor="@color/main_text_color"
+                        android:textStyle="bold" />
+                </com.supersaiyan.englock.view.customview.SquareLinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/stroke_margin_activity_main"
+                    android:background="@color/view_stroke"></View>
 
                 <com.supersaiyan.englock.view.customview.SquareLinearLayout
                     android:layout_width="1dp"
@@ -128,19 +195,17 @@
                         android:layout_width="@dimen/icon_size_activity_main"
                         android:layout_height="@dimen/icon_size_activity_main"
                         android:background="@drawable/shape_circle_green"
-                        android:padding="@dimen/icon_pading_activity_main"
+                        android:padding="15dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_statistics" />
+                        android:src="@drawable/ic_settings" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
-                        android:text="@string/statistics"
+                        android:text="@string/mini_story"
                         android:textColor="@color/main_text_color"
-                        android:textSize="@dimen/text_size_activity_main"
                         android:textStyle="bold" />
                 </com.supersaiyan.englock.view.customview.SquareLinearLayout>
 
@@ -175,7 +240,6 @@
                         android:gravity="center"
                         android:text="@string/setting"
                         android:textColor="@color/main_text_color"
-                        android:textSize="@dimen/text_size_activity_main"
                         android:textStyle="bold" />
 
                 </com.supersaiyan.englock.view.customview.SquareLinearLayout>
@@ -184,4 +248,5 @@
             </TableRow>
         </LinearLayout>
     </android.support.v7.widget.CardView>
+
 </layout>

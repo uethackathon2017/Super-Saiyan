@@ -22,9 +22,9 @@
     <dimen name="action_padding">8dp</dimen>
     <dimen name="t_size_subheading">18sp</dimen>
     <dimen name="stroke_margin_activity_main">12dp</dimen>
-    <dimen name="icon_size_activity_main">96dp</dimen>
+    <dimen name="icon_size_activity_main">64dp</dimen>
     <dimen name="icon_pading_activity_main">12dp</dimen>
     <dimen name="view_margin_activity_main">6dp</dimen>
-    <dimen name="text_size_activity_main">16sp</dimen>
+    <dimen name="text_size_activity_main">18sp</dimen>
 
 </resources>
