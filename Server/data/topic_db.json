@@ -4,39 +4,43 @@
     "words": [
       {
         "title": "Baboon",
-        "def": "",
+        "def": "A large Old World ground-dwelling monkey with a long doglike snout and large teeth",
         "mean": "Khỉ đầu chó",
         "trans": "/bəˈbuːn/",
         "sample": "Such pets weren't limited to dogs and cats but included baboons, monkeys, and gazelles.",
-        "image": ""
+        "image": "public/images/animal_baboon.png"
       },
       {
-        "title": "Bat",
-        "mean": "Bat",
-        "trans": "/bæt/",
+        "title": "Dog",
+        "def": "A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, non-retractable claws, and a barking, howling, or whining voice",
+        "mean": "Con chó",
+        "trans": "/dɔg/",
         "sample": "I asked, trying to make myself look as attractive as possible by batting my eyelashes wildly.",
-        "image": ""
+        "image": "public/images/animal_dog.png"
       },
       {
         "title": "Bear",
+        "def": "A large, heavy mammal that walks on the soles of its feet, having thick fur and a very short tail",
         "mean": "Con gấu",
         "trans": "/beəʳ/",
         "sample": "At Mama's urging, Sister makes a wish on a star for a toy bear.",
-        "image": ""
+        "image": "public/images/animal_bear.png"
       },
       {
         "title": "Beaver",
+        "def": "A large semiaquatic broad-tailed rodent native to North America and northern Eurasia",
         "mean": "Con hải ly",
         "trans": "/ˈbiː.vəʳ/",
         "sample": "These ethnic artefacts use interesting materials such as beaver fur, moose hide and deer toes.",
-        "image": ""
+        "image": "public/images/animal_beaver.png"
       },
       {
         "title": "Bee",
+        "def": "A stinging winged insect which collects nectar and pollen, produces wax and honey, and lives in large communities",
         "mean": "Con ong",
         "trans": "/biː/",
         "sample": "The fly actually has a rather complex little ‘brain,’ as do bees, ants, and other higher insects.",
-        "image": ""
+        "image": "public/images/animal_bee.png"
       }
     ]
   },
@@ -45,13 +49,15 @@
     "words": [
       {
         "title": "Accredit",
+        "def": "Give credit to (someone) for something",
         "mean": "Kiểm định chất lượng",
         "trans": "/əˈkredɪt/",
         "sample": "However, he could not control reporters not accredited to his command.",
-        "image": ""
+        "image": "public/images/education_accredit.png"
       },
       {
         "title": "Certificate",
+        "def": "An official document attesting a fact",
         "mean": "Giấy chứng nhận",
         "trans": "/sərˈtɪfɪkət/",
         "sample": "He even had a birth certificate for me.",
@@ -59,6 +65,7 @@
       },
       {
         "title": "Campus",
+        "def": "The grounds and buildings of a university or college",
         "mean": "Khuôn viên trường",
         "trans": "/ˈkæmpəs/",
         "sample": "University campuses became the rendezvous of students' organizations.",
@@ -66,6 +73,7 @@
       },
       {
         "title": "Cheating",
+        "def": "Act dishonestly or unfairly in order to gain an advantage",
         "mean": "Quay cóp",
         "trans": "/tʃiːtɪŋ/",
         "sample": "He was cheating Paul and Paul found out.",
@@ -73,6 +81,7 @@
       },
       {
         "title": "Enrollment",
+        "def": "The action of enrolling or being enrolled",
         "mean": "Nhập học",
         "trans": "/ɪnˈroʊlmənt /",
         "sample": "In 1909-1910 it had an enrollment of 2631 students.",
@@ -85,27 +94,31 @@
     "words": [
       {
         "title": "Archery",
+        "def": "Shooting with a bow and arrows, especially at a target as a sport",
         "mean": "Bắn cung",
         "trans": "/'ɑ:t∫əri/",
         "sample": "Live theatre, games, dancing, arts and crafts and archery, bring to life the Middle Ages.",
-        "image": ""
+        "image": "public/images/sport_archery.png"
       },
       {
         "title": "Athletics",
+        "def": "The sport of competing in track and field events, including running races and various competitions in jumping and throwing",
         "mean": "Điền kinh",
         "trans": "/æθ'letiks/",
         "sample": "Sanchez's dominance of his event is almost unique in the world of athletics.",
-        "image": ""
+        "image": "public/images/sport_athletics.png"
       },
       {
         "title": "Basketball",
+        "def": "A game played between two teams of five players in which goals are scored by throwing a ball through a netted hoop fixed at each end of the court",
         "mean": "Bóng rổ",
         "trans": "/'bɑ:skitbɔ:l/",
         "sample": "You'll be able to watch live premiership games, basketball, golf, cricket, and all sorts.",
-        "image": ""
+        "image": "public/images/sport_basketball.png"
       },
       {
         "title": "Gymnastics",
+        "def": "Exercises developing or displaying physical agility and coordination",
         "mean": "Tập thể hình",
         "trans": "/,dʒim'næstiks/",
         "sample": "Evora was involved in gymnastics for several years, where her favorite event was the uneven bars.",
@@ -113,10 +126,11 @@
       },
       {
         "title": "Table tennis",
+        "def": "An indoor game based on tennis, played with small bats and a ball bounced on a table divided by a net",
         "mean": "Bóng bàn",
         "trans": "/'teibl 'tenis/",
         "sample": "",
-        "image": ""
+        "image": "public/images/sport_table-tennis.png"
       }
     ]
   },
@@ -125,20 +139,23 @@
     "words": [
       {
         "title": "Computer",
+        "def": "An electronic device which is capable of receiving information (data) in a particular form and of performing a sequence of operations in accordance with a predetermined but variable set of procedural instructions (program) to produce a result in the form of information or signals.",
         "mean": "Máy tính",
         "trans": "/kəm'pju:tə/",
         "sample": "Clearly, not too many can afford to buy their own personal computers.",
-        "image": ""
+        "image": "public/images/technology_computer.png"
       },
       {
         "title": "Data",
+        "def": "Facts and statistics collected together for reference or analysis",
         "mean": "Dữ liệu",
         "trans": "/'deitə/",
         "sample": "The data signal is stored in a first memory in response to the write clock signal.",
-        "image": ""
+        "image": "public/images/technology_data.png"
       },
       {
         "title": "Exponentiation",
+        "def": "The operation of raising one quantity to the power of another",
         "mean": "Lũy thừa",
         "trans": "/,ekspənen∫i'ei∫n/",
         "sample": "exponentiation",
@@ -146,17 +163,19 @@
       },
       {
         "title": "Hardware",
+        "def": "Tools, machinery, and other durable equipment",
         "mean": "Phần cứng",
         "trans": "/'hɑ:dweə/",
         "sample": "Remove any easily removed hardware attached to the trim or mask hardware with tape.",
-        "image": ""
+        "image": "public/images/technology_hardware.png"
       },
       {
         "title": "Memory",
+        "def": "The faculty by which the mind stores and remembers information",
         "mean": "Bộ nhớ",
         "trans": "/'meməri/",
         "sample": "And she would always whisper something of a past memory, perhaps a name, just before deep slumber.",
-        "image": ""
+        "image": "public/images/technology_memory.png"
       }
     ]
   },
@@ -165,38 +184,43 @@
     "words": [
       {
         "title": "Accident",
+        "def": "A crash involving road or other vehicles",
         "mean": "Tai nạn",
         "trans": "/ˈæksɪdənt/",
         "sample": "All to make sure that the children get the opportunities they were denied by mere accident of birth.",
-        "image": ""
+        "image": "public/images/traffic_accident.png"
       },
       {
         "title": "Bus",
+        "def": "A large motor vehicle carrying passengers by road, typically one serving the public on a fixed route and for a fare",
         "mean": "Xe buýt",
         "trans": "/bʌs/",
         "sample": "She was already at the bus station.",
-        "image": ""
+        "image": "public/images/traffic_bus.png"
       },
       {
         "title": "Crossroads",
+        "def": "An intersection of two or more roads",
         "mean": "Ngã tư",
         "trans": "/ˈkrɔːsroʊdz/",
         "sample": "He said that he believes that the industry is ‘at an important crossroads with our customers.’",
-        "image": ""
+        "image": "public/images/traffic_crossroads.png"
       },
       {
         "title": "Driver",
+        "def": "A person who drives a vehicle",
         "mean": "Tài xế",
         "trans": "/ˈdraɪvər/",
         "sample": "I'm always fooling with new drivers, fairway woods and putters, but I don't switch very often.",
-        "image": ""
+        "image": "public/images/traffic_driver.png"
       },
       {
         "title": "Highway",
+        "def": "A main road, especially one connecting major towns or cities",
         "mean": "Đường cao tốc",
         "trans": "/ˈhaɪweɪ/",
         "sample": "It can be reached by highways from the major cities in Guangdong, Guangxi, and Hunan.",
-        "image": ""
+        "image": "public/images/traffic_highway.png"
       }
     ]
   },
@@ -205,6 +229,7 @@
     "words": [
       {
         "title": "Absolute",
+        "def": "Not qualified or diminished in any way",
         "mean": "Tuyệt đối",
         "trans": "/'æbsəlu:t/",
         "sample": "Coming to any form of decision under these conditions was, in his opinion, an absolute miracle.",
@@ -212,6 +237,7 @@
       },
       {
         "title": "Accidental",
+        "def": "Happening by chance, unintentionally, or unexpectedly",
         "mean": "Tình cờ",
         "trans": "/,æksi'dentl/",
         "sample": "It seems unlikely that the bright scarlet color is simply an accidental property.",
@@ -219,6 +245,7 @@
       },
       {
         "title": "Accurate",
+        "def": "Capable of or successful in reaching the intended target",
         "mean": "Đúng đắn",
         "trans": "/'ækjurit/",
         "sample": "It's been described as an epidemic, and I think that's an accurate representation, at this point.",
@@ -226,6 +253,7 @@
       },
       {
         "title": "Acknowledge",
+        "def": "Accept or admit the existence or truth of",
         "mean": "Công nhận",
         "trans": "/ək'nɔlidʤ/",
         "sample": "He called her name but she refused to acknowledge him.",
@@ -233,6 +261,7 @@
       },
       {
         "title": "Alter",
+        "def": "Change in character or composition, typically in a comparatively small but significant way",
         "mean": "Thay đổi",
         "trans": "/'ɔ:ltə/",
         "sample": "This clothing was then altered to become liturgical dress.",
