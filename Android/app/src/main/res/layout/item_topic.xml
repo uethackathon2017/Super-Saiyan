@@ -36,16 +36,16 @@
                 android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"
                 android:glideUrl="@{data.iconUrl}"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerInside" />
 
             <TextView
                 android:id="@+id/tv_card_main_2_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/img_main_card_2"
-                android:layout_margin="@dimen/card_title_margin"
+                android:layout_marginLeft="@dimen/card_title_margin"
                 android:text="@{data.nameToShow}"
-                android:textColor="@android:color/white"
+                android:textColor="#757575"
                 android:textSize="20sp" />
 
             <LinearLayout
