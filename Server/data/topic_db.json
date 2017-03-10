@@ -2,6 +2,7 @@
   {
     "name": "Animal",
     "country_name": "Động vật",
+    "icon_url": "public/images/animal_butterfly.png",
     "words": [
       {
         "title": "Baboon",
@@ -88,6 +89,7 @@
   {
     "name": "Education",
     "country_name": "Giáo dục",
+    "icon_url": "public/images/education_teacher.png",
     "words": [
       {
         "title": "Accredit",
@@ -174,6 +176,7 @@
   {
     "name": "Sport",
     "country_name": "Thể thao",
+    "icon_url": "public/images/sport_athletics.png",
     "words": [
       {
         "title": "Archery",
@@ -260,6 +263,7 @@
   {
     "name": "Technology",
     "country_name": "Công nghệ",
+    "icon_url": "public/images/technology_computer.png",
     "words": [
       {
         "title": "Computer",
@@ -346,6 +350,7 @@
   {
     "name": "Traffic",
     "country_name": "Giao thông",
+    "icon_url": "public/images/traffic_bus.png",
     "words": [
       {
         "title": "Accident",
