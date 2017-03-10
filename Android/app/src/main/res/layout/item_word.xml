@@ -1,48 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackground"
-    android:clickable="true"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:paddingBottom="8dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="8dp">
+<layout>
 
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:contentDescription="@null" />
+    <data>
 
-    <LinearLayout
-        android:layout_width="0dp"
+        <variable
+            name="data"
+            type="com.supersaiyan.englock.model.Word"></variable>
+
+        <variable
+            name="activity"
+            type="com.supersaiyan.englock.activity.TopicDetailActivity"></variable>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:onClick="@{(theView)->activity.onWordClick(theView,data)}"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp">
 
-        <TextView
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@null"
+            android:glideUrl="@{data.iconUrl}" />
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textStyle="bold" />
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toLeftOf="@+id/img_arrow"
+            android:layout_toRightOf="@+id/img_icon"
+            android:orientation="vertical">
 
-        <TextView
-            style="@style/TextAppearance.AppCompat.Menu"
-            android:layout_width="match_parent"
+            <TextView
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.title}"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.trans}"
+                android:textStyle="italic|normal" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_arrow"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="italic|normal" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:contentDescription="@null"
-        android:src="@drawable/ic_arrow"
-        android:tint="#9e9e9e" />
-</LinearLayout>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_arrow"
+            android:tint="#9e9e9e" />
+    </RelativeLayout>
+</layout>

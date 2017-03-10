@@ -1,0 +1,96 @@
+[
+  {
+    "name": "university",
+    "country_name": "Đại học",
+    "icon_url": "public/images/university_lecture-hall.png",
+    "words": [
+      {
+        "title": "Professor",
+        "def": "a university teacher of the highest rank",
+        "mean": "Giáo sư",
+        "trans": "/prəˈfesər/",
+        "sample": "He was made (a) professor at the age of 40.",
+        "image": "public/images/university_professor.png"
+      },
+      {
+        "title": "Library",
+        "def": "a building in which collections of books, CDs, newspapers, etc. are kept for people to read, study or borrow",
+        "mean": "Thư viện",
+        "trans": "/ˈlaɪbreri/",
+        "sample": "a new edition to add to your library.",
+        "image": "public/images/university_library.png"
+      },
+      {
+        "title": "Laboratory",
+        "def": "a room or building used for scientific research, experiments, testing, etc.",
+        "mean": "Phòng thí nghiệm",
+        "trans": "/ˈlæbrətɔːri/",
+        "sample": "to send a specimen to the laboratory for analysis.",
+        "image": "public/images/university_laboratory.png"
+      },
+      {
+        "title": "Lecture hall",
+        "def": "a large room with rows of seats on a slope, where lectures are given",
+        "mean": "Giảng đường",
+        "trans": "/ˈlektʃər hɔːl/",
+        "sample": "We learn Math at GD2 Lecture hall.",
+        "image": "public/images/university_lecture-hall.png"
+      },
+      {
+        "title": "Diploma",
+        "def": "a course of study at a college or university",
+        "mean": "Bằng cấp",
+        "trans": "/dɪˈploʊmə/",
+        "sample": "She is taking a diploma in management studies.",
+        "image": "public/images/university_diploma.png"
+      }
+    ]
+  },
+  {
+    "name": "bank",
+    "country_name": "Ngân hàng",
+    "icon_url": "public/images/university_lecture-hall.png",
+    "words": [
+      {
+        "title": "Money",
+        "def": "what you earn by working or selling things, and use to buy things",
+        "mean": "Tiền",
+        "trans": "/ˈmʌni/",
+        "sample": "How much money is there in my account?",
+        "image": "public/images/bank_money.png"
+      },
+      {
+        "title": "Check",
+        "def": "a document that orders a bank to pay a specific amount of money from a person's account",
+        "mean": "Séc",
+        "trans": "/tʃek/",
+        "sample": "He wrote me a check.",
+        "image": "public/images/bank_check.png"
+      },
+      {
+        "title": "Safe",
+        "def": "a strong metal box or cupboard with a complicated lock, used for storing valuable things in.",
+        "mean": "Két",
+        "trans": "/seɪf/",
+        "sample": "She keeps all her money in the safe box.",
+        "image": "public/images/bank_box.png"
+      },
+      {
+        "title": "Interest",
+        "def": "the extra money that you pay back when you borrow money or that you receive when you invest money",
+        "mean": "Lãi suất",
+        "trans": "/ˈɪntrest/",
+        "sample": "The money was repaid with interest.",
+        "image": "public/images/bank_interest.png"
+      },
+      {
+        "title": "Deposit",
+        "def": "a sum of money that is given as the first part of a larger payment",
+        "mean": "Tiền gửi",
+        "trans": "/dɪˈpɑːzɪt/",
+        "sample": "They'll probably ask you to leave a deposit.",
+        "image": "public/images/bank_deposit.png"
+      }
+    ]
+  }
+]
