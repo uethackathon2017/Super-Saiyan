@@ -8,8 +8,8 @@
             type="com.supersaiyan.englock.activity.MainActivity"></variable>
 
         <variable
-            name="actived"
-            type="boolean"></variable>
+            name="userConfig"
+            type="com.supersaiyan.englock.model.UserConfig"></variable>
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,7 +32,7 @@
                 <include
                     android:id="@+id/layout_menu"
                     layout="@layout/layout_menu"
-                    bind:actived="@{actived}"
+                    bind:actived="@{userConfig.activeLock}"
                     bind:activity="@{activity}"></include>
 
                 <android.support.v7.widget.CardView
@@ -105,7 +105,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_2sdp"
-                                android:text="@{actived?@string/was_active:@string/not_active}"
+                                android:text="@{userConfig.activeLock?@string/was_active:@string/not_active}"
                                 android:textColor="#EEEEEE"
                                 android:textSize="16sp" />
                         </LinearLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#607d8b</color>
-    <color name="colorPrimaryDark">#455a64</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
     <color name="colorAccent">#64B5F6</color>
 
     <color name="colorEndableActive">#03a9f4</color>
@@ -9,7 +9,10 @@
     <color name="colorDisableActive">@color/colorPrimary</color>
     <color name="color_add_topic">#FFCDD2</color>
 
+    <color name="topic_bg">#BBDEFB</color>
 
+    <color name="topic_disable">#aa000000</color>
+    <color name="topic_endable">#aa4CAF50</color>
 
     <!-- Screens background color-->
     <color name="bg_screen3">#f64c73</color>

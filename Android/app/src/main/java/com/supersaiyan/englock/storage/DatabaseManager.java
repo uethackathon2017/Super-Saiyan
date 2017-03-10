@@ -9,9 +9,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 import com.supersaiyan.englock.model.Topic;
+import com.supersaiyan.englock.model.UserConfig;
 import com.supersaiyan.englock.model.Word;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class DatabaseManager {
@@ -55,19 +57,35 @@ public class DatabaseManager {
             sqlDB.close();
     }
 
-    public Word[] getDoubleWordFromTable(String tableName) {
+    public HashMap<String, ArrayList<Word>> getWordToLockScreen() {
         openDB();
-        Word[] arrWord = new Word[2];
-        Cursor c = sqlDB.rawQuery("Select * from " + tableName + " ORDER BY RANDOM() LIMIT 2", null);
+        ArrayList<Word> dataResults = new ArrayList<>();
+        Cursor c = sqlDB.rawQuery("Select name from Topic WHERE selected = 1 ORDER BY RANDOM() LIMIT 1", null);
+        if (c.getCount() == 0) {
+            c = sqlDB.rawQuery("Select name from Topic ORDER BY RANDOM() LIMIT 1", null);
+        }
         c.moveToFirst();
-        for (int i = 0; i < arrWord.length; i++) {
-            // arrWord[i] = new Word(c.getString(c.getColumnIndex("EnglishMean")), c.getString(c.getColumnIndex("VietNameMean")), c.getString(c.getColumnIndex("Transliteration")));
+        String topicName = c.getString(c.getColumnIndex("name"));
+        c = sqlDB.rawQuery("Select * from Word WHERE topicName = '" + topicName + "' ORDER BY RANDOM() LIMIT " + UserConfig.getInstance().getNumberAnswer(), null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            Word word = new Word();
+            word.setTitle(c.getString(c.getColumnIndex("word")));
+            word.setMean(c.getString(c.getColumnIndex("mean")));
+            word.setTrans(c.getString(c.getColumnIndex("trans")));
+            word.setDef(c.getString(c.getColumnIndex("def")));
+            word.setSample(c.getString(c.getColumnIndex("sample")));
+            word.setIconUrl(c.getString(c.getColumnIndex("iconUrl")));
+            dataResults.add(word);
             c.moveToNext();
         }
 
         c.close();
         closeDB();
-        return arrWord;
+
+        HashMap<String, ArrayList<Word>> result = new HashMap<>();
+        result.put(topicName, dataResults);
+        return result;
     }
 
     public ArrayList<Topic> getListTopic() {
@@ -101,13 +119,16 @@ public class DatabaseManager {
     public ArrayList<Word> getListWordOfTopic(String topicName) {
         openDB();
         ArrayList<Word> result = new ArrayList<>();
-        Cursor c = sqlDB.rawQuery("SELECT word, trans, mean FROM " + WORD_TABLE_NAME + " where topicName = '" + topicName + "' order by word", null);
+        Cursor c = sqlDB.rawQuery("SELECT * FROM " + WORD_TABLE_NAME + " where topicName = '" + topicName + "' order by word", null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
             Word word = new Word();
             word.setTitle(c.getString(c.getColumnIndex("word")));
             word.setMean(c.getString(c.getColumnIndex("mean")));
             word.setTrans(c.getString(c.getColumnIndex("trans")));
+            word.setDef(c.getString(c.getColumnIndex("def")));
+            word.setSample(c.getString(c.getColumnIndex("sample")));
+            word.setIconUrl(c.getString(c.getColumnIndex("iconUrl")));
             result.add(word);
             c.moveToNext();
         }
@@ -142,6 +163,9 @@ public class DatabaseManager {
         contentVL.put("word", word.getTitle());
         contentVL.put("mean", word.getMean());
         contentVL.put("trans", word.getTrans());
+        contentVL.put("def", word.getDef());
+        contentVL.put("sample", word.getSample());
+        contentVL.put("iconUrl", word.getIconUrl());
         contentVL.put("topicName", topicName);
         sqlDB.insert(WORD_TABLE_NAME, null, contentVL);
         closeDB();
@@ -161,6 +185,9 @@ public class DatabaseManager {
                         + "word TEXT NOT NULL, "
                         + "mean TEXT NOT NULL, "
                         + "trans TEXT, "
+                        + "def TEXT, "
+                        + "sample TEXT, "
+                        + "iconUrl TEXT, "
                         + "topicName TEXT NOT NULL)", WORD_TABLE_NAME);
 
         public DatabasesHelper(Context context) {

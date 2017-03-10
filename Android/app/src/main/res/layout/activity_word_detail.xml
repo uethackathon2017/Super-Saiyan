@@ -1,123 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white">
+<layout>
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="data"
+            type="com.supersaiyan.englock.model.Word"></variable>
+    </data>
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="144dp"
-            android:layout_height="144dp"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Display2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_horizontal"
-            android:text="Baboon" />
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_circle"
-                android:backgroundTint="#f44336"
-                android:clickable="true"
-                android:padding="8dp"
-                android:src="@drawable/ic_volume" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/bg_circle"
-                android:backgroundTint="#4caf50"
-                android:clickable="true"
-                android:padding="8dp"
-                android:src="@drawable/ic_voice" />
-        </LinearLayout>
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Nghĩa của từ: Khỉ đầu chó" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:layout_gravity="center_horizontal"
+                android:glideUrl="@{data.iconUrl}" />
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Title"
+                style="@style/TextAppearance.AppCompat.Display2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:text="@{data.title}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="#f44336"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_volume" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="#4caf50"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_voice" />
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Phiên âm: "
-                android:textStyle="normal" />
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nghĩa của từ: " />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.mean}"
+                    android:textStyle="italic|normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Phiên âm: "
+                    android:textStyle="normal" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{data.trans}"
+                    android:textStyle="italic|normal" />
+            </LinearLayout>
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="[/bəˈbuːn/]"
-                android:textStyle="italic|normal" />
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_word_header"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="4dp"
+                android:text="Định nghĩa"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_word_body"
+                android:padding="16dp"
+                android:text="@{data.def}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_word_header"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="@dimen/_16sdp"
+                android:paddingTop="4dp"
+                android:text="Ví dụ"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_word_body"
+                android:padding="16dp"
+                android:text="@{data.sample}" />
         </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_word_header"
-            android:paddingBottom="4dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="4dp"
-            android:text="Định nghĩa"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_word_body"
-            android:padding="16dp"
-            android:text="A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, non-retractable claws, and a barking, howling, or whining voice" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_word_header"
-            android:paddingBottom="4dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="@dimen/_16sdp"
-            android:paddingTop="4dp"
-            android:text="Ví dụ"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_word_body"
-            android:padding="16dp"
-            android:text="I asked, trying to make myself look as attractive as possible by batting my eyelashes wildly." />
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

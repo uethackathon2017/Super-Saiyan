@@ -5,11 +5,13 @@ import android.databinding.BaseObservable;
 import com.google.gson.annotations.SerializedName;
 import com.supersaiyan.englock.api.Config;
 
+import java.io.Serializable;
+
 /**
  * Created by thanh_000 on 3/10/2017.
  */
 
-public class Word extends BaseObservable {
+public class Word extends BaseObservable implements Serializable {
     @SerializedName("title")
     private String title;
 
@@ -26,69 +28,57 @@ public class Word extends BaseObservable {
     private String sample;
 
     @SerializedName("image")
-    private String image;
+    private String iconUrl;
 
     public Word() {
-    }
-
-    @Override
-    public String toString() {
-        return "Word{" +
-                "title='" + title + '\'' +
-                ", def='" + def + '\'' +
-                ", mean='" + mean + '\'' +
-                ", trans='" + trans + '\'' +
-                ", sample='" + sample + '\'' +
-                ", image='" + image + '\'' +
-                '}';
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDef(String def) {
-        this.def = def;
-    }
-
-    public void setMean(String mean) {
-        this.mean = mean;
-    }
-
-    public void setTrans(String trans) {
-        this.trans = trans;
-    }
-
-    public void setSample(String sample) {
-        this.sample = sample;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getTitle() {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getDef() {
         return def;
+    }
+
+    public void setDef(String def) {
+        this.def = def;
     }
 
     public String getMean() {
         return mean;
     }
 
+    public void setMean(String mean) {
+        this.mean = mean;
+    }
+
     public String getTrans() {
         return trans;
+    }
+
+    public void setTrans(String trans) {
+        this.trans = trans;
     }
 
     public String getSample() {
         return sample;
     }
 
-    public String getImage() {
-        return Config.BASE_URL + "/" + image;
+    public void setSample(String sample) {
+        this.sample = sample;
+    }
+
+    public String getIconUrl() {
+        return iconUrl;
+    }
+
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = Config.BASE_URL + "/" + iconUrl;
     }
 
     public boolean equals(Word word) {
