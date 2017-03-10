@@ -6,13 +6,14 @@ const EVENT_SIGN_INTERRUPT = 'sigint'.toUpperCase();
 let bodyParse = require('body-parser');
 let express = require('express');
 let http = require('http');
-require('dotenv').config();
 
 let app = express();
 let server = http.createServer(app);
 
 app.use(bodyParse.json());
 app.use('/public', express.static(__dirname + '/public'));
+
+require('dotenv').config();
 
 startApplication();
 
@@ -28,7 +29,7 @@ function startApplication() {
     server.listen(process.env.port || 8080, () => {
         console.log('Server was started.');
 
-        app.use(require('./routes/topic'));
         app.use(require('./routes/oxford'));
+        app.use(require('./routes/topic'));
     });
 }
