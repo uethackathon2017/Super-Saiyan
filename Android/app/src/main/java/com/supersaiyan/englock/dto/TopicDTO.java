@@ -1,6 +1,7 @@
 package com.supersaiyan.englock.dto;
 
 import com.google.gson.annotations.SerializedName;
+import com.supersaiyan.englock.api.Config;
 import com.supersaiyan.englock.model.Topic;
 import com.supersaiyan.englock.model.Word;
 
@@ -57,7 +58,7 @@ public class TopicDTO {
         topic.setTopicName(name);
         topic.setNameToShow(countryName);
         topic.setSeclected(0);
-        topic.setIconUrl(iconUrl);
+        topic.setIconUrl(Config.BASE_URL + "/" + iconUrl);
         return topic;
     }
 
