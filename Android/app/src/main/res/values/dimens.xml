@@ -27,4 +27,5 @@
     <dimen name="view_margin_activity_main">6dp</dimen>
     <dimen name="text_size_activity_main">16sp</dimen>
 
+    <dimen name="about_separator_height">0.5dp</dimen>
 </resources>
