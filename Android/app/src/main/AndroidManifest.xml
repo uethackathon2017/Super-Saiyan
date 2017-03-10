@@ -24,6 +24,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.TopicActivity"></activity>
+        <activity android:name=".activity.TopicDetailActivity"></activity>
+        <activity android:name=".activity.WordDetailActivity"></activity>
+
+        <service
+            android:name=".MainService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

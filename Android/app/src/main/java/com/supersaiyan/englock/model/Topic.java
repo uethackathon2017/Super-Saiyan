@@ -7,6 +7,8 @@ import com.supersaiyan.englock.BR;
 import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.api.Config;
 
+import java.io.Serializable;
+
 /**
  * Created by thanh_000 on 3/10/2017.
  */
@@ -52,6 +54,7 @@ public class Topic extends BaseObservable implements Comparable {
 
     public void setSeclected(int seclected) {
         this.seclected = seclected;
+        notifyPropertyChanged(BR.seclected);
     }
 
     public void changeSelectState() {
