@@ -1,6 +1,8 @@
 [
   {
     "name": "Animal",
+    "country_name": "Động vật",
+    "icon_url": "public/images/animal_baboon.png",
     "words": [
       {
         "title": "Baboon",
@@ -46,6 +48,8 @@
   },
   {
     "name": "Education",
+    "country_name": "Giáo dục",
+    "icon_url": "public/images/education_accredit.png",
     "words": [
       {
         "title": "Accredit",
@@ -91,6 +95,8 @@
   },
   {
     "name": "Sport",
+    "country_name": "Thể thao",
+    "icon_url": "public/images/sport_archery.png",
     "words": [
       {
         "title": "Archery",
@@ -136,6 +142,8 @@
   },
   {
     "name": "Technology",
+    "country_name": "Công nghệ",
+    "icon_url": "public/images/technology_computer.png",
     "words": [
       {
         "title": "Computer",
@@ -181,6 +189,8 @@
   },
   {
     "name": "Traffic",
+    "country_name": "Giao thông",
+    "icon_url": "public/images/traffic_accident.png",
     "words": [
       {
         "title": "Accident",
@@ -221,51 +231,6 @@
         "trans": "/ˈhaɪweɪ/",
         "sample": "It can be reached by highways from the major cities in Guangdong, Guangxi, and Hunan.",
         "image": "public/images/traffic_highway.png"
-      }
-    ]
-  },
-  {
-    "name": "General",
-    "words": [
-      {
-        "title": "Absolute",
-        "def": "Not qualified or diminished in any way",
-        "mean": "Tuyệt đối",
-        "trans": "/'æbsəlu:t/",
-        "sample": "Coming to any form of decision under these conditions was, in his opinion, an absolute miracle.",
-        "image": ""
-      },
-      {
-        "title": "Accidental",
-        "def": "Happening by chance, unintentionally, or unexpectedly",
-        "mean": "Tình cờ",
-        "trans": "/,æksi'dentl/",
-        "sample": "It seems unlikely that the bright scarlet color is simply an accidental property.",
-        "image": ""
-      },
-      {
-        "title": "Accurate",
-        "def": "Capable of or successful in reaching the intended target",
-        "mean": "Đúng đắn",
-        "trans": "/'ækjurit/",
-        "sample": "It's been described as an epidemic, and I think that's an accurate representation, at this point.",
-        "image": ""
-      },
-      {
-        "title": "Acknowledge",
-        "def": "Accept or admit the existence or truth of",
-        "mean": "Công nhận",
-        "trans": "/ək'nɔlidʤ/",
-        "sample": "He called her name but she refused to acknowledge him.",
-        "image": ""
-      },
-      {
-        "title": "Alter",
-        "def": "Change in character or composition, typically in a comparatively small but significant way",
-        "mean": "Thay đổi",
-        "trans": "/'ɔ:ltə/",
-        "sample": "This clothing was then altered to become liturgical dress.",
-        "image": ""
       }
     ]
   }
