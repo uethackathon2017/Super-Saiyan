@@ -1,49 +1,70 @@
 'use strict';
 
-let path = require('path');
-let Place = require('../models/Place');
-let Promise = require('promise');
+const PLACE_TYPES = [
+    'airport',
+    'bank',
+    'church',
+    'doctor',
+    'hospital',
+    'university'
+];
 
-var googleMapsClient = require('@google/maps').createClient({
-    key: process.env.GOOGLE_MAP_API_KEY
-});
+let googleMap = require('@google/maps');
 
-const PLACE_TYPES = ['university', 'bank', 'hospital', 'church', 'airport'];
+//noinspection JSUnresolvedFunction
+let googleMapsClient = googleMap.createClient({key: process.env.GOOGLE_MAP_API_KEY});
 
-function test(req, res) {
-    var lat = req.query.lat;
-    var lng = req.query.lng;
-
-    if (!lat || !lng) {
-        res.send('Not enough params');
+function getSuggestionTopic(req, res) {
+    let latitude = req.body.latitude;
+    let longitude = req.body.longitude;
+    if (latitude == null || longitude == null) {
+        res.status(400).json({success: false});
         return;
     }
 
-    var places = [];
+    getSuggestionTopicAsync(latitude, longitude, function (topics) {
+        if (topics.length > 0) {
+            res.status(200).json({topic: topics[0]});
+        } else {
+            res.status(200).json({topic: null});
+        }
+    })
+}
 
-    PLACE_TYPES.forEach(function (place_type) {
+function getSuggestionTopicAsync(latitude, longitude, callback) {
+    let result = [];
+    let count = 0;
+    PLACE_TYPES.forEach(function (item) {
+        //noinspection JSUnresolvedFunction
         googleMapsClient.placesNearby({
-            location: [lat, lng],
-            radius: 100,
-            type: place_type
+            location: [latitude, longitude],
+            radius: 500,
+            type: item
         }, function (err, response) {
             if (!err) {
-                var ps = getPlacesAround(response.json.results);
-                ps.forEach(function (item) {
-                    places.push(item);
+                //noinspection JSUnresolvedVariable
+                parseTopicData(response.json.results).then(topics => {
+                    topics.forEach(function (item) {
+                        result.push(item);
+                    });
+                    count++;
+                    if (count === PLACE_TYPES.length) {
+                        callback(result);
+                    }
                 });
             }
         });
     })
 }
 
-function getPlacesAround(raw) {
-    var places = [];
-    raw.forEach(function (item) {
-        var place = new Place(item.name, item.types[0]);
-        places.push(place);
+function parseTopicData(data) {
+    return new Promise((reslove, reject) => {
+        let topics = [];
+        data.forEach(function (item) {
+            topics.push(item.types[0]);
+        });
+        reslove(topics);
     });
-    return places;
 }
 
-module.exports.test = test;
+module.exports.getSuggestionTopic = getSuggestionTopic;
