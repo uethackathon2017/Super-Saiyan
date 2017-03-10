@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.supersaiyan.englock.activity.MainActivity"></variable>
+
+        <variable
+            name="actived"
+            type="boolean"></variable>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="5">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="4.9">
+
+                <include
+                    android:id="@+id/layout_menu"
+                    layout="@layout/layout_menu"
+                    bind:actived="@{actived}"
+                    bind:activity="@{activity}"></include>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/layout_menu"
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/img_bg_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_top_gradient"
+                            android:scaleType="centerCrop" />
+
+                        <RelativeLayout
+                            android:id="@+id/layout_contain_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/layout_label"
+                            android:layout_alignTop="@+id/tv_app_name_in"
+                            android:layout_marginLeft="@dimen/_24sdp">
+
+                            <ImageView
+                                android:id="@+id/img_icon"
+                                android:layout_width="@dimen/_36sdp"
+                                android:layout_height="@dimen/_36sdp"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/bg_circle_stroke_default"
+                                android:padding="@dimen/_9sdp"
+                                android:src="@mipmap/ic_launcher" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_toRightOf="@+id/layout_contain_icon"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_app_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/app_name"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_24sdp"
+                                android:textStyle="italic|bold" />
+
+                            <TextView
+                                android:id="@+id/tv_active"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="@{actived?@string/was_active:@string/not_active}"
+                                android:textColor="#EEEEEE"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_app_name_in"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/layout_label"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:text="@string/app_name"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="italic|bold"
+                            android:visibility="invisible" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
