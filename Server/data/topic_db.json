@@ -1,0 +1,243 @@
+[
+  {
+    "name": "Animal",
+    "words": [
+      {
+        "title": "Baboon",
+        "def": "",
+        "mean": "Khỉ đầu chó",
+        "trans": "/bəˈbuːn/",
+        "sample": "Such pets weren't limited to dogs and cats but included baboons, monkeys, and gazelles.",
+        "image": ""
+      },
+      {
+        "title": "Bat",
+        "mean": "Bat",
+        "trans": "/bæt/",
+        "sample": "I asked, trying to make myself look as attractive as possible by batting my eyelashes wildly.",
+        "image": ""
+      },
+      {
+        "title": "Bear",
+        "mean": "Con gấu",
+        "trans": "/beəʳ/",
+        "sample": "At Mama's urging, Sister makes a wish on a star for a toy bear.",
+        "image": ""
+      },
+      {
+        "title": "Beaver",
+        "mean": "Con hải ly",
+        "trans": "/ˈbiː.vəʳ/",
+        "sample": "These ethnic artefacts use interesting materials such as beaver fur, moose hide and deer toes.",
+        "image": ""
+      },
+      {
+        "title": "Bee",
+        "mean": "Con ong",
+        "trans": "/biː/",
+        "sample": "The fly actually has a rather complex little ‘brain,’ as do bees, ants, and other higher insects.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Education",
+    "words": [
+      {
+        "title": "Accredit",
+        "mean": "Kiểm định chất lượng",
+        "trans": "/əˈkredɪt/",
+        "sample": "However, he could not control reporters not accredited to his command.",
+        "image": ""
+      },
+      {
+        "title": "Certificate",
+        "mean": "Giấy chứng nhận",
+        "trans": "/sərˈtɪfɪkət/",
+        "sample": "He even had a birth certificate for me.",
+        "image": ""
+      },
+      {
+        "title": "Campus",
+        "mean": "Khuôn viên trường",
+        "trans": "/ˈkæmpəs/",
+        "sample": "University campuses became the rendezvous of students' organizations.",
+        "image": ""
+      },
+      {
+        "title": "Cheating",
+        "mean": "Quay cóp",
+        "trans": "/tʃiːtɪŋ/",
+        "sample": "He was cheating Paul and Paul found out.",
+        "image": ""
+      },
+      {
+        "title": "Enrollment",
+        "mean": "Nhập học",
+        "trans": "/ɪnˈroʊlmənt /",
+        "sample": "In 1909-1910 it had an enrollment of 2631 students.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Sport",
+    "words": [
+      {
+        "title": "Archery",
+        "mean": "Bắn cung",
+        "trans": "/'ɑ:t∫əri/",
+        "sample": "Live theatre, games, dancing, arts and crafts and archery, bring to life the Middle Ages.",
+        "image": ""
+      },
+      {
+        "title": "Athletics",
+        "mean": "Điền kinh",
+        "trans": "/æθ'letiks/",
+        "sample": "Sanchez's dominance of his event is almost unique in the world of athletics.",
+        "image": ""
+      },
+      {
+        "title": "Basketball",
+        "mean": "Bóng rổ",
+        "trans": "/'bɑ:skitbɔ:l/",
+        "sample": "You'll be able to watch live premiership games, basketball, golf, cricket, and all sorts.",
+        "image": ""
+      },
+      {
+        "title": "Gymnastics",
+        "mean": "Tập thể hình",
+        "trans": "/,dʒim'næstiks/",
+        "sample": "Evora was involved in gymnastics for several years, where her favorite event was the uneven bars.",
+        "image": ""
+      },
+      {
+        "title": "Table tennis",
+        "mean": "Bóng bàn",
+        "trans": "/'teibl 'tenis/",
+        "sample": "",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Technology",
+    "words": [
+      {
+        "title": "Computer",
+        "mean": "Máy tính",
+        "trans": "/kəm'pju:tə/",
+        "sample": "Clearly, not too many can afford to buy their own personal computers.",
+        "image": ""
+      },
+      {
+        "title": "Data",
+        "mean": "Dữ liệu",
+        "trans": "/'deitə/",
+        "sample": "The data signal is stored in a first memory in response to the write clock signal.",
+        "image": ""
+      },
+      {
+        "title": "Exponentiation",
+        "mean": "Lũy thừa",
+        "trans": "/,ekspənen∫i'ei∫n/",
+        "sample": "exponentiation",
+        "image": ""
+      },
+      {
+        "title": "Hardware",
+        "mean": "Phần cứng",
+        "trans": "/'hɑ:dweə/",
+        "sample": "Remove any easily removed hardware attached to the trim or mask hardware with tape.",
+        "image": ""
+      },
+      {
+        "title": "Memory",
+        "mean": "Bộ nhớ",
+        "trans": "/'meməri/",
+        "sample": "And she would always whisper something of a past memory, perhaps a name, just before deep slumber.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Traffic",
+    "words": [
+      {
+        "title": "Accident",
+        "mean": "Tai nạn",
+        "trans": "/ˈæksɪdənt/",
+        "sample": "All to make sure that the children get the opportunities they were denied by mere accident of birth.",
+        "image": ""
+      },
+      {
+        "title": "Bus",
+        "mean": "Xe buýt",
+        "trans": "/bʌs/",
+        "sample": "She was already at the bus station.",
+        "image": ""
+      },
+      {
+        "title": "Crossroads",
+        "mean": "Ngã tư",
+        "trans": "/ˈkrɔːsroʊdz/",
+        "sample": "He said that he believes that the industry is ‘at an important crossroads with our customers.’",
+        "image": ""
+      },
+      {
+        "title": "Driver",
+        "mean": "Tài xế",
+        "trans": "/ˈdraɪvər/",
+        "sample": "I'm always fooling with new drivers, fairway woods and putters, but I don't switch very often.",
+        "image": ""
+      },
+      {
+        "title": "Highway",
+        "mean": "Đường cao tốc",
+        "trans": "/ˈhaɪweɪ/",
+        "sample": "It can be reached by highways from the major cities in Guangdong, Guangxi, and Hunan.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "General",
+    "words": [
+      {
+        "title": "Absolute",
+        "mean": "Tuyệt đối",
+        "trans": "/'æbsəlu:t/",
+        "sample": "Coming to any form of decision under these conditions was, in his opinion, an absolute miracle.",
+        "image": ""
+      },
+      {
+        "title": "Accidental",
+        "mean": "Tình cờ",
+        "trans": "/,æksi'dentl/",
+        "sample": "It seems unlikely that the bright scarlet color is simply an accidental property.",
+        "image": ""
+      },
+      {
+        "title": "Accurate",
+        "mean": "Đúng đắn",
+        "trans": "/'ækjurit/",
+        "sample": "It's been described as an epidemic, and I think that's an accurate representation, at this point.",
+        "image": ""
+      },
+      {
+        "title": "Acknowledge",
+        "mean": "Công nhận",
+        "trans": "/ək'nɔlidʤ/",
+        "sample": "He called her name but she refused to acknowledge him.",
+        "image": ""
+      },
+      {
+        "title": "Alter",
+        "mean": "Thay đổi",
+        "trans": "/'ɔ:ltə/",
+        "sample": "This clothing was then altered to become liturgical dress.",
+        "image": ""
+      }
+    ]
+  }
+]

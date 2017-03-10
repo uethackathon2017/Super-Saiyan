@@ -1,0 +1,12 @@
+{
+  "name": "EnglockWebService",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "*",
+    "bluebird": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*"
+  }
+}
