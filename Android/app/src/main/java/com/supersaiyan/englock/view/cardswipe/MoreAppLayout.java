@@ -5,9 +5,7 @@ import android.util.AttributeSet;
 
 import com.supersaiyan.englock.R;
 
-
 public class MoreAppLayout extends BaseCardLayout {
-
 
     public MoreAppLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -15,7 +13,7 @@ public class MoreAppLayout extends BaseCardLayout {
 
     @Override
     protected void findViews() {
-        inflate(getContext(), R.layout.layout_train, this);
+        inflate(getContext(), R.layout.screen_about_us, this);
     }
 
     @Override
