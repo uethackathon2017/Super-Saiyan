@@ -175,6 +175,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void communicationClick() {
-
+        startActivity(new Intent(this, CommunicationActivity.class));
     }
 }

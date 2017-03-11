@@ -17,24 +17,28 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="2dp"
-            android:background="@android:color/black" />
+            android:background="@android:color/black"
+            android:onClick="@{(theView)->activity.onRoom1Click()}" />
 
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="2dp"
-            android:background="@android:color/black" />
+            android:background="@android:color/black"
+            android:onClick="@{(theView)->activity.onRoom2Click()}" />
 
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="2dp"
-            android:background="@android:color/black" />
+            android:background="@android:color/black"
+            android:onClick="@{(theView)->activity.onRoom3Click()}" />
 
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="2dp"
-            android:background="@android:color/black" />
+            android:background="@android:color/black"
+            android:onClick="@{(theView)->activity.onRoom4Click()}" />
     </LinearLayout>
 </layout>
