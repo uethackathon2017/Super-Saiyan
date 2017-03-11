@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.supersaiyan.englock.model.Word"></variable>
+
+        <variable
+            name="activity"
+            type="com.supersaiyan.englock.activity.FindWordByLocationActivity"></variable>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:onClick="@{(theView)->activity.onWordClick(theView, data)}"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp">
+
+        <ImageView
+            android:id="@+id/img_url"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@null"
+            android:glideUrl="@{data.iconUrl}" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toLeftOf="@+id/img_voice"
+            android:layout_toRightOf="@+id/img_url"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.title}"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.mean}"
+                android:textStyle="italic|normal" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toLeftOf="@+id/ic_star"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:src="@drawable/ic_voice"
+            android:tint="#4caf50" />
+
+        <ImageView
+            android:id="@+id/ic_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:src="@drawable/ic_star"
+            android:tint="#f44336" />
+    </RelativeLayout>
+
+</layout>

@@ -115,6 +115,7 @@
                     android:background="@drawable/bg_main_item"
                     android:clickable="true"
                     android:gravity="center"
+                    android:onClick="@{(theView)->activity.findWordByLocation()}"
                     android:orientation="vertical">
 
                     <ImageView
