@@ -31,8 +31,7 @@ public class FindWordByLocationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_find_word, null, false);
-        setContentView(binding.getRoot());
+
         final ProgressDialog progressDialog = ProgressDialog.show(this, "Đang lấy dữ liệu", "Vui lòng chờ");
         getFetchData(new OnSuggestionWordLoadListener() {
             @Override
@@ -41,7 +40,6 @@ public class FindWordByLocationActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         progressDialog.dismiss();
-                        initToolbar(data.getCountryName());
                         setUpRecyclerView(data.getWords());
                     }
                 });
@@ -49,12 +47,13 @@ public class FindWordByLocationActivity extends AppCompatActivity {
 
             @Override
             public void onFailure() {
+                finish();
             }
         });
     }
 
 
-    public void initToolbar(String name) {
+    public void initToolbar() {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setTitle("Đề xuất từ vựng");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -73,7 +72,9 @@ public class FindWordByLocationActivity extends AppCompatActivity {
         for (Word word : words) {
             word.setIconUrl(word.getIconUrl());
         }
-
+        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_find_word, null, false);
+        setContentView(binding.getRoot());
+        initToolbar();
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(new LocationWordAdapter(words, this));
     }

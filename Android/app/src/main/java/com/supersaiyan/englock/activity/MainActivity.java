@@ -173,4 +173,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FindWordByLocationActivity.class);
         startActivity(intent);
     }
+
+    public void communicationClick() {
+        startActivity(new Intent(this, CommunicationActivity.class));
+    }
 }

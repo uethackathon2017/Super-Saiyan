@@ -124,7 +124,7 @@
                         android:background="@drawable/shape_circle_red"
                         android:padding="@dimen/icon_pading_activity_main"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_statistics" />
+                        android:src="@drawable/ic_story" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -190,6 +190,7 @@
                     android:background="@drawable/bg_main_item"
                     android:clickable="true"
                     android:gravity="center"
+                    android:onClick="@{(theView)->activity.communicationClick()}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -198,7 +199,7 @@
                         android:background="@drawable/shape_circle_green"
                         android:padding="15dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_settings" />
+                        android:src="@drawable/ic_public" />
 
                     <TextView
                         android:layout_width="match_parent"
