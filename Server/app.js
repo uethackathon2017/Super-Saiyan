@@ -31,5 +31,7 @@ function startApplication() {
 
         app.use(require('./routes/oxford'));
         app.use(require('./routes/topic'));
+
+        require('./controllers/socket')(server);
     });
 }
