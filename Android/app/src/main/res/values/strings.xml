@@ -20,18 +20,6 @@
     <string name="skip">Đóng</string>
     <string name="start">Bắt đầu</string>
 
-    <string name="slide_1_title">@string/app_name</string>
-    <string name="slide_1_desc">Một sản phẩm đến từ UET team giúp bạn học tiếng Anh một cách hiệu quả!</string>
-
-    <string name="slide_2_title">Chủ đề đa dạng</string>
-    <string name="slide_2_desc">Với rất nhiều chủ đề, việc học tiếng Anh của bạn sẽ dễ dàng hơn bao giờ hết!</string>
-
-    <string name="slide_3_title">Giao diện thân thiện</string>
-    <string name="slide_3_desc">Giao diện đơn giản, dễ dùng  sẽ giúp bạn không bị nhàm chán khi học tập!</string>
-
-    <string name="slide_4_title">Good luck!!!</string>
-    <string name="slide_4_desc">Chúc bạn có những giây phút học tập hiệu quả cùng Study lock!</string>
-
     <string name="press_again_to_quit">Nhấn lần nữa để thoát</string>
     <string name="accept">Đồng ý</string>
     <string name="request_permission_message">Vui lòng cho phép sử dụng quyền vẽ trên ứng dụng khác</string>
@@ -53,17 +41,11 @@
     <string name="using_password">Sử dụng mật khẩu</string>
     <string name="change_password">Thay mật khẩu</string>
     <string name="active_password_to_use">Vui lòng kích hoạt sử dụng mật khẩu để chọn chức năng này</string>
-    <string name="dev_by">Phát triển bởi</string>
-    <string name="author">Uet team</string>
-    <string name="email_address">Địa chỉ email</string>
-    <string name="time">Thời gian</string>
-    <string name="time_create_app">Tháng 8 năm 2016</string>
-    <string name="thank_user">Cám ơn bạn!</string>
-    <string name="train">Luyện tập</string>
+    <string name="train">Từ theo vị trí</string>
     <string name="more_app">Ứng dụng hay</string>
     <string name="mini_game">Mini game</string>
     <string name="statistics">Thống kê</string>
-    <string name="mini_story">Truyện ngắn</string>
+    <string name="mini_story">Cộng đồng</string>
     <string name="introduce_lock_screen">Hãy thử khóa màn hình để thấy điều thú vị ^^!</string>
     <string name="active_success">Kích hoạt thành công</string>
 
@@ -82,4 +64,5 @@
     <string name="create_topic_success">Chủ đề %s đã được tạo!!!</string>
     <string name="preaparing_data">Đang chuẩn bị dữ liệu</string>
     <string name="please_wait">Vui lòng chờ</string>
+    <string name="word_of_topic">Từ vựng chuyên ngành</string>
 </resources>
