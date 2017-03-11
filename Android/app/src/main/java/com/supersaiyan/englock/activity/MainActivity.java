@@ -21,6 +21,10 @@ import com.supersaiyan.englock.locksystem.view.AnswerToUnlockLayout;
 import com.supersaiyan.englock.model.UserConfig;
 import com.supersaiyan.englock.storage.DatabaseManager;
 import com.supersaiyan.englock.storage.PrefManager;
+import com.supersaiyan.englock.util.AnimUtil;
+import com.supersaiyan.englock.view.cardswipe.ChooseTopicLayout;
+import com.supersaiyan.englock.view.cardswipe.MiniGameLayout;
+import com.supersaiyan.englock.view.cardswipe.MoreAppLayout;
 import com.supersaiyan.englock.view.dialog.AlertDialogPlus;
 
 import java.util.ArrayList;
@@ -46,10 +50,33 @@ public class MainActivity extends AppCompatActivity {
         binding.getRoot();
         setContentView(binding.getRoot());
         checkData();
-
+        startAnim();
         if (userConfig.isActiveLock()) {
             startService(new Intent(this, MainService.class));
         }
+
+    }
+
+    private void startAnim() {
+        ChooseTopicLayout layoutChoiceTopic;
+        MoreAppLayout layoutMoreApp;
+        MiniGameLayout layoutMiniGame;
+
+        layoutChoiceTopic = binding.layoutChoiceTopic;
+        layoutMoreApp = binding.layoutMoreApp;
+        layoutMiniGame = binding.layoutMiniGame;
+
+
+        layoutChoiceTopic.setHideRestOthersEnable(true);
+        layoutMoreApp.setHideRestOthersEnable(true);
+        layoutMiniGame.setHideRestOthersEnable(true);
+
+        layoutChoiceTopic.setFirstResetEnable(true);
+        layoutMoreApp.setFirstResetEnable(true);
+        layoutMiniGame.setFirstResetEnable(true);
+        AnimUtil.postAnimationBottom(layoutMoreApp, 200, 1100);
+        AnimUtil.postAnimationBottom(layoutMiniGame, 150, 1000);
+        AnimUtil.postAnimationBottom(layoutChoiceTopic, 100, 900);
     }
 
     public void checkData() {
@@ -139,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void chooseTopicClick() {
         Intent intent = new Intent(this, TopicActivity.class);
+        startActivity(intent);
+    }
+
+    public void findWordByLocation() {
+        Intent intent = new Intent(this, FindWordByLocationActivity.class);
         startActivity(intent);
     }
 }

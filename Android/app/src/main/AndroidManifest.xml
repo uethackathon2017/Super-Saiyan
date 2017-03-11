@@ -30,6 +30,7 @@
         <activity android:name=".activity.TopicActivity"></activity>
         <activity android:name=".activity.TopicDetailActivity"></activity>
         <activity android:name=".activity.WordDetailActivity"></activity>
+        <activity android:name=".activity.FindWordByLocationActivity"></activity>
 
         <service
             android:name=".MainService"
