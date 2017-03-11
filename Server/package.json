@@ -10,9 +10,7 @@
     "express": "*",
     "google-translate-api": "*",
     "jsonwebtoken": "*",
-    "mongoose": "*",
-    "promise": "*",
-    "request": "^2.81.0",
+    "request": "*",
     "request-promise": "*"
   }
 }

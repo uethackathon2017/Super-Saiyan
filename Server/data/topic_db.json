@@ -105,7 +105,7 @@
         "mean": "Giấy chứng nhận",
         "trans": "/sərˈtɪfɪkət/",
         "sample": "He even had a birth certificate for me.",
-        "image": ""
+        "image": "public/images/education_certificate.png"
       },
       {
         "title": "Campus",
@@ -113,27 +113,27 @@
         "mean": "Khuôn viên trường",
         "trans": "/ˈkæmpəs/",
         "sample": "University campuses became the rendezvous of students' organizations.",
-        "image": ""
+        "image": "public/images/education_campus.png"
       },
       {
-        "title": "Cheating",
-        "def": "Act dishonestly or unfairly in order to gain an advantage",
-        "mean": "Quay cóp",
-        "trans": "/tʃiːtɪŋ/",
-        "sample": "He was cheating Paul and Paul found out.",
-        "image": ""
+        "title": "Dormitory",
+        "def": "A room for several people to sleep in, especially in a school or other institution",
+        "mean": "Ký túc xá",
+        "trans": "/ˈdɔːrmətɔːri/",
+        "sample": "My friend live in dormitory of university.",
+        "image": "public/images/education_dormitory.png"
       },
       {
-        "title": "Enrollment",
-        "def": "The action of enrolling or being enrolled",
-        "mean": "Nhập học",
-        "trans": "/ɪnˈroʊlmənt /",
-        "sample": "In 1909-1910 it had an enrollment of 2631 students.",
-        "image": ""
+        "title": "Sickbay",
+        "def": "A room or rooms, for example on a ship or in a school, with beds for people who are ill/sick",
+        "mean": "Phòng y tế",
+        "trans": "/ˈsɪkbeɪ/",
+        "sample": "Today I'm so tired so my friend takes me to sickbay.",
+        "image": "public/images/education_sickbay.png"
       },
       {
         "title": "Candidate",
-        "def": "a person taking an exam",
+        "def": "A person taking an exam",
         "mean": "Thí sinh",
         "trans": "/ˈkændɪdət/",
         "sample": "Candidates are allowed to use dictionaries in this examination.",
@@ -208,7 +208,7 @@
         "mean": "Tập thể hình",
         "trans": "/,dʒim'næstiks/",
         "sample": "Evora was involved in gymnastics for several years, where her favorite event was the uneven bars.",
-        "image": ""
+        "image": "public/images/sport_gymnastics.png"
       },
       {
         "title": "Table tennis",
@@ -282,12 +282,12 @@
         "image": "public/images/technology_data.png"
       },
       {
-        "title": "Exponentiation",
-        "def": "The operation of raising one quantity to the power of another",
-        "mean": "Lũy thừa",
-        "trans": "/,ekspənen∫i'ei∫n/",
-        "sample": "exponentiation",
-        "image": ""
+        "title": "Smartphone",
+        "def": "A mobile/cell phone that also has some of the functions of a computer",
+        "mean": "Điện thoại thông minh",
+        "trans": "/ˈsmɑːtfəʊn/",
+        "sample": "You can use your smartphone to access the Internet.",
+        "image": "public/images/technology_smartphone.png"
       },
       {
         "title": "Hardware",

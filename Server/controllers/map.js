@@ -11,7 +11,6 @@ const PLACE_TYPES = [
 
 let googleMap = require('@google/maps');
 
-//noinspection JSUnresolvedFunction
 let googleMapsClient = googleMap.createClient({key: process.env.GOOGLE_MAP_API_KEY});
 
 function getSuggestionTopic(req, res) {
@@ -35,10 +34,9 @@ function getSuggestionTopicAsync(latitude, longitude, callback) {
     let result = [];
     let count = 0;
     PLACE_TYPES.forEach(function (item) {
-        //noinspection JSUnresolvedFunction
         googleMapsClient.placesNearby({
             location: [latitude, longitude],
-            radius: 500,
+            radius: 100,
             type: item
         }, function (err, response) {
             if (!err) {

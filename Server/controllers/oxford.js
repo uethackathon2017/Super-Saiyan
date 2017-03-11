@@ -13,8 +13,8 @@ function getNewWord(req, res) {
         method: 'GET',
         headers: {
             "Accept": "application/json",
-            "app_id": process.env.APP_ID,
-            "app_key": process.env.APP_KEY
+            "app_id": process.env.OXFORD_APP_ID,
+            "app_key": process.env.OXFORD_APP_KEY
         },
         json: true
     }).then(function (response) {
@@ -26,32 +26,25 @@ function getNewWord(req, res) {
 
 function getWordData(word, rawData) {
     return new Promise((resolve, reject) => {
-        var lexicalEntries = rawData.results[0].lexicalEntries[0];
-        var senses = lexicalEntries.entries[0].senses[0];
+        let lexicalEntries = rawData.results[0].lexicalEntries[0];
+        let senses = lexicalEntries.entries[0].senses[0];
 
-        var title = word;
-        var def = senses.definitions[0];
-        var p = new Promise((resolve, reject) => {
+        let title = word;
+        let def = senses.definitions[0];
+        let p = new Promise((resolve, reject) => {
                 translate(word, {to: 'vi'}).then(function (res) {
                     resolve(res.text);
                 });
             }
         ).then(mean => {
-            var trans = lexicalEntries.pronunciations[0].phoneticSpelling;
+            let trans = lexicalEntries.pronunciations[0].phoneticSpelling;
             trans = '/' + trans + '/';
-            var sample = senses.examples[0].text;
+            let sample = senses.examples[0].text;
             resolve(createNewWord(title, def, mean, trans, sample));
         });
     });
 }
 
-function getVnMean(word) {
-    return Promise((resolve, reject) => {
-        translate(word, {to: 'vi'}).then(function (res) {
-            resolve(res.text);
-        });
-    });
-}
 function createNewWord(title, def, mean, trans, sample) {
     return {
         title: title,
