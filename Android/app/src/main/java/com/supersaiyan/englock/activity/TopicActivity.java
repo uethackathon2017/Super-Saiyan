@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.PopupMenu;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +15,9 @@ import android.view.View;
 import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.databinding.ActivityTopicBinding;
 import com.supersaiyan.englock.model.Topic;
-import com.supersaiyan.englock.model.Word;
 import com.supersaiyan.englock.storage.DatabaseManager;
 import com.supersaiyan.englock.view.adapter.TopicAdapter;
 import com.supersaiyan.englock.view.customview.GridSpacingID;
-
-import java.util.ArrayList;
 
 /**
  * Created by thanh_000 on 3/10/2017.
@@ -76,10 +72,7 @@ public class TopicActivity extends AppCompatActivity {
                         DatabaseManager.getInstance().updateTopicSelect(topic.getTopicName(), topic.getSeclected());
                         break;
                     case R.id.action_list_word:
-                        Intent intent = new Intent(TopicActivity.this, TopicDetailActivity.class);
-                        intent.putExtra("Name", topic.getTopicName());
-                        intent.putExtra("CountryName", topic.getTopicName());
-                        startActivity(intent);
+                        listWord(topic);
                         break;
                     case R.id.action_delete:
 
@@ -89,7 +82,13 @@ public class TopicActivity extends AppCompatActivity {
             }
         });
         popupMenu.show();
+    }
 
+    public void listWord(Topic topic) {
+        Intent intent = new Intent(TopicActivity.this, TopicDetailActivity.class);
+        intent.putExtra("Name", topic.getTopicName());
+        intent.putExtra("CountryName", topic.getTopicName());
+        startActivity(intent);
     }
 
 }

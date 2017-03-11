@@ -6,6 +6,10 @@
         <variable
             name="data"
             type="com.supersaiyan.englock.model.Word"></variable>
+
+        <variable
+            name="activity"
+            type="com.supersaiyan.englock.activity.WordDetailActivity"></variable>
     </data>
 
     <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -46,6 +50,7 @@
                     android:background="@drawable/bg_circle"
                     android:backgroundTint="#f44336"
                     android:clickable="true"
+                    android:onClick="@{(theView)->activity.speech()}"
                     android:padding="8dp"
                     android:src="@drawable/ic_volume" />
 
@@ -57,6 +62,7 @@
                     android:background="@drawable/bg_circle"
                     android:backgroundTint="#4caf50"
                     android:clickable="true"
+                    android:onClick="@{(theView)->activity.startSpeechToText()}"
                     android:padding="8dp"
                     android:src="@drawable/ic_voice" />
             </LinearLayout>

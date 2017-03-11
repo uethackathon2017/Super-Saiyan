@@ -60,12 +60,13 @@ public class DatabaseManager {
     public HashMap<String, ArrayList<Word>> getWordToLockScreen() {
         openDB();
         ArrayList<Word> dataResults = new ArrayList<>();
-        Cursor c = sqlDB.rawQuery("Select name from Topic WHERE selected = 1 ORDER BY RANDOM() LIMIT 1", null);
+        Cursor c = sqlDB.rawQuery("Select name, countryName from Topic WHERE selected = 1 ORDER BY RANDOM() LIMIT 1", null);
         if (c.getCount() == 0) {
-            c = sqlDB.rawQuery("Select name from Topic ORDER BY RANDOM() LIMIT 1", null);
+            c = sqlDB.rawQuery("Select name, countryName from Topic ORDER BY RANDOM() LIMIT 1", null);
         }
         c.moveToFirst();
         String topicName = c.getString(c.getColumnIndex("name"));
+        String countryName = c.getString(c.getColumnIndex("countryName"));
         c = sqlDB.rawQuery("Select * from Word WHERE topicName = '" + topicName + "' ORDER BY RANDOM() LIMIT " + UserConfig.getInstance().getNumberAnswer(), null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
@@ -84,7 +85,7 @@ public class DatabaseManager {
         closeDB();
 
         HashMap<String, ArrayList<Word>> result = new HashMap<>();
-        result.put(topicName, dataResults);
+        result.put(countryName, dataResults);
         return result;
     }
 
