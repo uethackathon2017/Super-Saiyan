@@ -6,9 +6,7 @@ import android.view.View;
 
 import com.supersaiyan.englock.R;
 
-
 public class MiniGameLayout extends BaseCardLayout {
-
 
     public MiniGameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -16,7 +14,7 @@ public class MiniGameLayout extends BaseCardLayout {
 
     @Override
     protected void findViews() {
-        View.inflate(getContext(), R.layout.layout_train, this);
+        View.inflate(getContext(), R.layout.screen_feedback, this);
     }
 
     @SuppressWarnings("unchecked")
