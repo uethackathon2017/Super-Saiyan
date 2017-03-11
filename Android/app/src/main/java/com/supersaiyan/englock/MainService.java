@@ -34,14 +34,10 @@ public class MainService extends Service implements LockView.OnUnlockListener {
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            // if (pfManager.getActive())
             if (isLocking) {
                 return;
             } else {
                 addWindowManager();
-//                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
-//                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                startActivity(intent1);
             }
         }
     };
@@ -53,17 +49,10 @@ public class MainService extends Service implements LockView.OnUnlockListener {
 
     @Override
     public void onCreate() {
-        initSystemLockScreen();
         IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
         registerReceiver(receiver, filter);
         pushNotifyCation();
         super.onCreate();
-    }
-
-    private void initSystemLockScreen() {
-
-        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
-        KeyguardManager km = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
     }
 
     private void pushNotifyCation() {
@@ -99,9 +88,7 @@ public class MainService extends Service implements LockView.OnUnlockListener {
         params.flags |= WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
         params.flags |= WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
         params.flags |= WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED;
-//        params.flags |= WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON;
-//        params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-        //
+
         params.flags &= ~WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
         params.flags |= WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH;
         params.format = PixelFormat.TRANSPARENT;
