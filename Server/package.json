@@ -12,6 +12,6 @@
     "jsonwebtoken": "*",
     "request": "*",
     "request-promise": "*",
-    "socket.io": "*"
+    "fs": "*"
   }
 }

@@ -64,6 +64,8 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
         Set<String> keySet = result.keySet();
         topicName = keySet.toArray()[0].toString();
         words = result.get(topicName);
+        topicName = getContext().getString(R.string.word_of_topic) + " " + topicName;
+
     }
 
     private void setUpAnserToUnLockLayout() {
@@ -117,7 +119,6 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
     public void checkAnswer(final int answer) {
         setClickAbleForAnswerBtn(false);
         if (answer == rightAnswerIndex) {
-
             answerListener.onAnswerRight();
         } else {
             pickWords();

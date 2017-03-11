@@ -128,5 +128,22 @@
             </RelativeLayout>
         </LinearLayout>
 
+        <com.supersaiyan.englock.view.cardswipe.ChooseTopicLayout
+            android:id="@+id/layout_choice_topic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="168dip" />
+
+        <com.supersaiyan.englock.view.cardswipe.MiniGameLayout
+            android:id="@+id/layout_mini_game"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="112dip" />
+
+        <com.supersaiyan.englock.view.cardswipe.MoreAppLayout
+            android:id="@+id/layout_more_app"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="56dip" />
     </RelativeLayout>
 </layout>
