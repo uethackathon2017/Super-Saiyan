@@ -8,25 +8,27 @@ import com.supersaiyan.englock.view.customview.CardFrameLayout;
 
 public class BaseCardLayout extends CardFrameLayout {
 
-	public BaseCardLayout(Context context) {
-		this(context, null);
-	}
+    public BaseCardLayout(Context context) {
+        this(context, null);
+    }
 
-	public BaseCardLayout(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		onCreateView(context);
-	}
+    public BaseCardLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        onCreateView(context);
+    }
 
-	private void onCreateView(final Context context) {
-		findViews();
-		setViewsContent();
-		setViewsListener();
-	}
+    private void onCreateView(final Context context) {
+        findViews();
+        setViewsContent();
+        setViewsListener();
+    }
 
-	protected void findViews() {
-	}
-	protected void setViewsContent() {
-	}
-	protected void setViewsListener() {
-	}
+    protected void findViews() {
+    }
+
+    protected void setViewsContent() {
+    }
+
+    protected void setViewsListener() {
+    }
 }
