@@ -31,6 +31,8 @@
         <activity android:name=".activity.TopicDetailActivity"></activity>
         <activity android:name=".activity.WordDetailActivity"></activity>
         <activity android:name=".activity.FindWordByLocationActivity"></activity>
+        <activity android:name=".activity.CommunicationActivity"></activity>
+        <activity android:name=".activity.ChatRoomActivity"></activity>
 
         <service
             android:name=".MainService"
