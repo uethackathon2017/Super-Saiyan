@@ -1,5 +1,7 @@
 package com.supersaiyan.englock.activity;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
@@ -8,7 +10,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 
 import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.databinding.ActivityTopicBinding;
@@ -58,4 +63,35 @@ public class TopicDetailActivity extends AppCompatActivity {
         intent.putExtra("data", word);
         startActivity(intent);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_word, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_add_word:
+                AddWordDialog dialog = new AddWordDialog(this);
+                dialog.getWindow().getAttributes().windowAnimations = R.style.AppTheme_Dialog_Animate;
+                dialog.show();
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public class AddWordDialog extends Dialog {
+        public AddWordDialog(Context context) {
+            super(context);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.dialog_add_word);
+        }
+
+    }
+
 }

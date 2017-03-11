@@ -13,7 +13,7 @@ public class MoreAppLayout extends BaseCardLayout {
 
     @Override
     protected void findViews() {
-        inflate(getContext(), R.layout.screen_about_us, this);
+        inflate(getContext(), R.layout.layout_train, this);
     }
 
     @Override
