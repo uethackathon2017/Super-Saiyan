@@ -11,6 +11,7 @@
     "google-translate-api": "*",
     "jsonwebtoken": "*",
     "request": "*",
-    "request-promise": "*"
+    "request-promise": "*",
+    "fs": "*"
   }
 }

@@ -10,6 +10,7 @@ const PLACE_TYPES = [
 ];
 
 let googleMap = require('@google/maps');
+let fs = require('fs');
 
 let googleMapsClient = googleMap.createClient({key: process.env.GOOGLE_MAP_API_KEY});
 
@@ -23,11 +24,21 @@ function getSuggestionTopic(req, res) {
 
     getSuggestionTopicAsync(latitude, longitude, function (topics) {
         if (topics.length > 0) {
-            res.status(200).json({topic: topics[0]});
+            let match_topic = getWordsByTopic(topics[0]);
+            res.status(200).json(match_topic);
         } else {
             res.status(200).json({topic: null});
         }
     })
+}
+
+function getWordsByTopic(topic_name) {
+    let topics = JSON.parse(fs.readFileSync('./data/extra_topic_db.json', 'utf8'));
+    for (let topic of topics) {
+        if (topic.name === topic_name) {
+            return topic;
+        }
+    }
 }
 
 function getSuggestionTopicAsync(latitude, longitude, callback) {
