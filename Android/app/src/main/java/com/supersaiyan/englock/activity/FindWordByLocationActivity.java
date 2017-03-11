@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,7 +14,7 @@ import android.view.View;
 import com.google.gson.JsonObject;
 import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.api.ServiceImpl;
-import com.supersaiyan.englock.databinding.ActivityTopicBinding;
+import com.supersaiyan.englock.databinding.ActivityFindWordBinding;
 import com.supersaiyan.englock.dto.TopicDTO;
 import com.supersaiyan.englock.model.Word;
 import com.supersaiyan.englock.view.adapter.LocationWordAdapter;
@@ -27,12 +26,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FindWordByLocationActivity extends AppCompatActivity {
-    private ActivityTopicBinding binding;
+    private ActivityFindWordBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_topic, null, false);
+        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_find_word, null, false);
         setContentView(binding.getRoot());
         final ProgressDialog progressDialog = ProgressDialog.show(this, "Đang lấy dữ liệu", "Vui lòng chờ");
         getFetchData(new OnSuggestionWordLoadListener() {
@@ -50,7 +49,6 @@ public class FindWordByLocationActivity extends AppCompatActivity {
 
             @Override
             public void onFailure() {
-
             }
         });
     }
@@ -58,9 +56,17 @@ public class FindWordByLocationActivity extends AppCompatActivity {
 
     public void initToolbar(String name) {
         setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setTitle(name);
+        getSupportActionBar().setTitle("Đề xuất từ vựng");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.toolbar.setTitleTextColor(Color.WHITE);
         binding.toolbar.setSubtitleTextColor(Color.WHITE);
+
+        binding.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void setUpRecyclerView(ArrayList<Word> words) {

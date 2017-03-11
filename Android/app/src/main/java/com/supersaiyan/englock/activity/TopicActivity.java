@@ -40,8 +40,16 @@ public class TopicActivity extends AppCompatActivity {
     public void initToolbar() {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setTitle(R.string.choice_topic);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.toolbar.setTitleTextColor(Color.WHITE);
         binding.toolbar.setSubtitleTextColor(Color.WHITE);
+
+        binding.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void setUpRecyclerView() {

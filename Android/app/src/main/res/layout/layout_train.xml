@@ -16,19 +16,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:background="@color/red_500"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal"
             android:paddingLeft="4dp">
 
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
                 android:scaleType="fitStart"
                 android:src="@drawable/ic_topic"
-                android:transitionName="img_tran_picktopic"
-                android:id="@+id/imageView" />
+                android:transitionName="img_tran_picktopic" />
 
             <TextView
                 android:layout_width="match_parent"

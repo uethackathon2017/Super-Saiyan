@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,6 @@ import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.databinding.ActivityTopicBinding;
 import com.supersaiyan.englock.model.Word;
 import com.supersaiyan.englock.storage.DatabaseManager;
-import com.supersaiyan.englock.view.adapter.TopicAdapter;
 import com.supersaiyan.englock.view.adapter.WordAdapter;
 
 /**
@@ -38,8 +36,16 @@ public class TopicDetailActivity extends AppCompatActivity {
     public void initToolbar() {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setTitle(getIntent().getStringExtra("CountryName"));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.toolbar.setTitleTextColor(Color.WHITE);
         binding.toolbar.setSubtitleTextColor(Color.WHITE);
+
+        binding.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void setUpRecyclerView() {
