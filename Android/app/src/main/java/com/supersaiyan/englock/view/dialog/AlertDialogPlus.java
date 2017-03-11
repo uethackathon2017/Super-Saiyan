@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
+import com.supersaiyan.englock.R;
+
 /**
  * Created by thanh_000 on 3/10/2017.
  */
@@ -54,6 +56,7 @@ public class AlertDialogPlus {
 
     public void show(OnClick onClick) {
         this.onClick = onClick;
+        alertDialog.getWindow().getAttributes().windowAnimations = R.style.AppTheme_Dialog_Animate;
         alertDialog.show();
     }
 
