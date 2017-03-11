@@ -8,10 +8,11 @@
     "body-parser": "*",
     "dotenv": "*",
     "express": "*",
+    "fs": "*",
     "google-translate-api": "*",
     "jsonwebtoken": "*",
     "request": "*",
     "request-promise": "*",
-    "fs": "*"
+    "socket.io": "*"
   }
 }
