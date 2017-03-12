@@ -23,6 +23,9 @@ function getNewWord(req, res) {
         }).catch(err => {
             res.status(404).json({success: false});
         });
+    }).catch(err => {
+        console.log(err);
+        res.status(404).json({success: false});
     });
 }
 
@@ -37,7 +40,8 @@ function getWordData(word, rawData) {
                 translate(word, {to: 'vi'}).then(function (res) {
                     resolve(res.text);
                 }).catch(err => {
-                    reject(404);
+                    console.log(err);
+                    reject(err);
                 });
             }
         ).then(mean => {
@@ -45,6 +49,9 @@ function getWordData(word, rawData) {
             trans = '/' + trans + '/';
             let sample = senses.examples[0].text;
             resolve(createNewWord(title, def, mean, trans, sample));
+        }).catch(err => {
+            console.log(err);
+            reject(err);
         });
     });
 }
