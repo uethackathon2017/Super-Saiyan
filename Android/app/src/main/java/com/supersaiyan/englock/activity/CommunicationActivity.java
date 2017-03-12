@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 
@@ -26,24 +27,30 @@ public class CommunicationActivity extends AppCompatActivity {
     }
 
     public void onRoom1Click() {
-        Intent intent = new Intent(this, ChatRoomActivity.class);
-        intent.putExtra("data", "room1");
-        startActivity(intent);
+        openRoom("room1");
     }
 
     public void onRoom2Click() {
-
+        openRoom("room2");
     }
 
     public void onRoom3Click() {
-
+        openRoom("room3");
     }
 
     public void onRoom4Click() {
-
+        openRoom("room4");
     }
 
-    public void onRoom5Click() {
-
+    public void openRoom(String roomName) {
+        if (binding.edtName.getText().toString().trim().equals("")) {
+            Snackbar.make(binding.getRoot(), "Vui lòng nhập tên.", Snackbar.LENGTH_LONG).show();
+            return;
+        }
+        Intent intent = new Intent(this, ChatRoomActivity.class);
+        intent.putExtra("data", roomName);
+        intent.putExtra("name", binding.edtName.getText().toString().trim());
+        startActivity(intent);
     }
+
 }

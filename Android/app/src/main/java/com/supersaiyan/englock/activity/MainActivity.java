@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
+import com.bumptech.glide.Glide;
 import com.supersaiyan.englock.MainService;
 import com.supersaiyan.englock.R;
 import com.supersaiyan.englock.api.ServiceImpl;
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         if (userConfig.isActiveLock()) {
             startService(new Intent(this, MainService.class));
         }
+
+        Glide.with(this).load(R.drawable.bkg_03).into(binding.imgBgTop);
 
     }
 
