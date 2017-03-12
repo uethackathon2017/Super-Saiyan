@@ -25,10 +25,12 @@ import com.supersaiyan.englock.view.adapter.MessageAdapter;
 public class ChatRoomActivity extends AppCompatActivity {
     private static final String TAG = "ChatRoomActivity";
     private ActivityChatRoomBinding binding;
-    private String roomName;
     private MessageAdapter adapter;
     private LinearLayoutManager layoutManager;
     private RecyclerView recyclerView;
+
+    private String roomName;
+    private String nickname;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         binding.setActivity(this);
         setContentView(binding.getRoot());
         roomName = getIntent().getStringExtra("data");
+        nickname = getIntent().getStringExtra("name");
         setUpListener();
         setUpRecyclerView();
 
@@ -67,7 +70,7 @@ public class ChatRoomActivity extends AppCompatActivity {
 
     public void sendClick() {
         if (binding.edtMessage.getText().toString().trim().equals("")) return;
-        FirebaseDatabase.getInstance().getReference().child("room").child(roomName).push().setValue(new Message("Name", binding.edtMessage.getText().toString().trim()));
+        FirebaseDatabase.getInstance().getReference().child("room").child(roomName).push().setValue(new Message(nickname, binding.edtMessage.getText().toString().trim()));
         binding.edtMessage.setText("");
     }
 
