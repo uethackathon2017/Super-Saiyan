@@ -14,7 +14,7 @@ public class MiniGameLayout extends BaseCardLayout {
 
     @Override
     protected void findViews() {
-        View.inflate(getContext(), R.layout.screen_feedback, this);
+        View.inflate(getContext(), R.layout.screen_about_us, this);
     }
 
     @SuppressWarnings("unchecked")

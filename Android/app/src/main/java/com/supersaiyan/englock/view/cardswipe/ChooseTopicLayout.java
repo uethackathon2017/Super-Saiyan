@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.supersaiyan.englock.R;
 
-
 public class ChooseTopicLayout extends BaseCardLayout {
     private static final String TAG = "BaseCardLayout";
 
@@ -16,7 +15,7 @@ public class ChooseTopicLayout extends BaseCardLayout {
 
     @Override
     protected void findViews() {
-        View.inflate(getContext(), R.layout.layout_train, this);
+        View.inflate(getContext(), R.layout.screen_feedback, this);
     }
 
 
