@@ -58,7 +58,7 @@ public class LockView extends FrameLayout implements OnAnswerListener, EnterPass
     public void setBackground(int backgroundIndex) {
 
         imgBackground = (ImageView) findViewById(R.id.img_bg);
-        Glide.with(getContext()).load(R.drawable.bkg_02)
+        Glide.with(getContext()).load(R.drawable.bkg_03)
                 .centerCrop().into(imgBackground);
     }
 
