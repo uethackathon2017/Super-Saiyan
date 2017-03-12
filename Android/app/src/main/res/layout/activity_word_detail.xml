@@ -65,6 +65,19 @@
                     android:onClick="@{(theView)->activity.startSpeechToText()}"
                     android:padding="8dp"
                     android:src="@drawable/ic_voice" />
+
+                <ImageView
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/purple_500"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_save"
+                    android:visibility="gone" />
             </LinearLayout>
 
 

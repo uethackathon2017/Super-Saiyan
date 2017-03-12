@@ -65,6 +65,7 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
         topicName = keySet.toArray()[0].toString();
         words = result.get(topicName);
         topicName = getContext().getString(R.string.word_of_topic) + " " + topicName;
+        rightAnswerIndex = RD.nextInt(2);
 
     }
 
@@ -81,10 +82,7 @@ public class AnswerToUnlockLayout extends FrameLayout implements View.OnClickLis
 
         TextView tvTitle = (TextView) findViewById(R.id.tv_title);
         tvTitle.setText(userConfig.getLockTitle());
-
         setDataForView();
-
-
     }
 
     private void setDataForView() {

@@ -38,7 +38,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
                 android:gravity="center_vertical"
-                android:text="Liên hệ với chúng tôi"
+                android:text="Thông tin liên hệ"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />

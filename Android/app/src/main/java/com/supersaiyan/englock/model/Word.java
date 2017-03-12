@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.supersaiyan.englock.api.Config;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by thanh_000 on 3/10/2017.
@@ -30,7 +31,24 @@ public class Word extends BaseObservable implements Serializable {
     @SerializedName("image")
     private String iconUrl;
 
+    /* for SRS algorithm */
+    private transient int currentInterval = 0;
+    private transient float EF = 0.0f;
+    private transient Date nextDay;
+
     public Word() {
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "title='" + title + '\'' +
+                ", def='" + def + '\'' +
+                ", mean='" + mean + '\'' +
+                ", trans='" + trans + '\'' +
+                ", sample='" + sample + '\'' +
+                ", iconUrl='" + iconUrl + '\'' +
+                '}';
     }
 
     public String getTitle() {
@@ -79,6 +97,30 @@ public class Word extends BaseObservable implements Serializable {
 
     public void setIconUrl(String iconUrl) {
         this.iconUrl = Config.BASE_URL + "/" + iconUrl;
+    }
+
+    public int getCurrentInterval() {
+        return currentInterval;
+    }
+
+    public void setCurrentInterval(int currentInterval) {
+        this.currentInterval = currentInterval;
+    }
+
+    public float getEF() {
+        return EF;
+    }
+
+    public void setEF(float EF) {
+        this.EF = EF;
+    }
+
+    public Date getNextDay() {
+        return nextDay;
+    }
+
+    public void setNextDay(Date nextDay) {
+        this.nextDay = nextDay;
     }
 
     public boolean equals(Word word) {

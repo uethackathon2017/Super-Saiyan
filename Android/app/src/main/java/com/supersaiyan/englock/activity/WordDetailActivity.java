@@ -12,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
 import com.supersaiyan.englock.R;
@@ -36,6 +37,10 @@ public class WordDetailActivity extends AppCompatActivity implements TextToSpeec
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_word_detail, null, false);
+
+        binding.btnSave.setVisibility(
+                getIntent().getBooleanExtra("hasSave", false) ? View.VISIBLE : View.GONE
+        );
 
         word = (Word) getIntent().getSerializableExtra("data");
         binding.setData(word);
