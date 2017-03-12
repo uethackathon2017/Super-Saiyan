@@ -13,23 +13,30 @@ Team members
 
 Technology
 ---------
-* Android
-* NodeJS
+* Client
+  * Android Native
+  * Firebase
+* Server
+  * NodeJS
 
 Required Enviroment
 -------------------
-...
+* Android OS for Client App
 
 Documentations
 -------------
-...
+https://goo.gl/TyCuUd
 
 How to install
 --------------
-1. Import database from `database/final-database.sql`
-2. Configure your own `application.properties` and `persistence.properties` in `src\main\resources`
-3. Import to any J2EE IDE or run with Maven
+Download and run App from https://goo.gl/TyCuUd
 
 Resources
 ---------
-
+* APIs
+  * Oxford Dicitionaries API (https://developer.oxforddictionaries.com/)
+  * Google Map API (https://developers.google.com/maps/)
+  * Google Cloud Translate API (https://cloud.google.com/translate/)
+* Libaries
+  * Retrofit (http://square.github.io/retrofit/)
+  * Firebase (https://firebase.google.com/)
