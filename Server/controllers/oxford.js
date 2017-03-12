@@ -20,6 +20,8 @@ function getNewWord(req, res) {
     }).then(function (response) {
         getWordData(word, response).then(newWord => {
             res.send(newWord);
+        }).catch(err => {
+            res.status(404).json({success: false});
         });
     });
 }
@@ -34,6 +36,8 @@ function getWordData(word, rawData) {
         let p = new Promise((resolve, reject) => {
                 translate(word, {to: 'vi'}).then(function (res) {
                     resolve(res.text);
+                }).catch(err => {
+                    reject(404);
                 });
             }
         ).then(mean => {

@@ -33,6 +33,18 @@ public class Word extends BaseObservable implements Serializable {
     public Word() {
     }
 
+    @Override
+    public String toString() {
+        return "Word{" +
+                "title='" + title + '\'' +
+                ", def='" + def + '\'' +
+                ", mean='" + mean + '\'' +
+                ", trans='" + trans + '\'' +
+                ", sample='" + sample + '\'' +
+                ", iconUrl='" + iconUrl + '\'' +
+                '}';
+    }
+
     public String getTitle() {
         return title;
     }
